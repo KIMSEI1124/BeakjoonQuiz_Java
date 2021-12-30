@@ -1,8 +1,8 @@
 import java.util.Scanner;
 
 public class Q10869 {
+    static Scanner sc = new Scanner(System.in);
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
         String quiz = sc.nextLine();
         String[] arr = quiz.split(" ");
         int num1 = Integer.parseInt(arr[0]);

@@ -1,8 +1,8 @@
 import java.util.Scanner;
 
 public class Q2753 {
+    static Scanner sc = new Scanner(System.in);
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
         int year = sc.nextInt();
         if (year % 4 == 0) { // 4의 배수 이면서
             if (year % 100 != 0) { // 100의 배수가 아닐때
