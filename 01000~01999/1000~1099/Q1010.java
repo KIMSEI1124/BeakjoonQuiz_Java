@@ -17,7 +17,7 @@ public class Q1010 {
         int east_Point = sc.nextInt(); // 강 서쪽
         int west_Point = sc.nextInt(); // 강 동쪽
         for (int i = 0; i < 100; i++) {
-
+            
         }
         return answer;
     }
