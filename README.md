@@ -13,7 +13,7 @@ Solved Quiz :
 
 Solving Quiz :
 ```
-1010 3190
+1010 1463 3190
 ```
 
 ---
