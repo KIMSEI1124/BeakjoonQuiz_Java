@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.*;
+@SuppressWarnings({"rawtypes","unchecked"})
 
 public class Q10818 {
     static Scanner sc = new Scanner(System.in);
@@ -20,6 +21,6 @@ public class Q10818 {
     public static void solve(ArrayList arr) {
         int max = (int) Collections.max(arr);
         int min = (int) Collections.min(arr);
-        System.out.print(min+"\n"+max);
+        System.out.print(max + "\n" + min);
     }
 }
