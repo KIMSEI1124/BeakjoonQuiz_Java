@@ -20,5 +20,5 @@ Solving Quiz :
 
 Failed Quiz :
 ```
-1152
+1152 2869
 ```
