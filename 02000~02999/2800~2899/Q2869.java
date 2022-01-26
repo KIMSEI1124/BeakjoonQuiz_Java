@@ -17,15 +17,7 @@ public class Q2869 {
     }
 
     public static void solve() {
-        int answer = 0;
-        while (true) {
-            V -= A;
-            answer++;
-            if (V <= 0) {
-                break;
-            }
-            V += B;
-            System.out.println(answer);
-        }
+        int answer = (int) (Math.ceil((double) (V - A) / (A - B)) + 1);
+        System.out.println(answer);
     }
 }
