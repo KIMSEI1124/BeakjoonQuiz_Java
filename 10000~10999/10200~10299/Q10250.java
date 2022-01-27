@@ -21,8 +21,15 @@ public class Q10250 {
     }
 
     public static void solve(StringBuilder sb) {
-        sb.append(N % H); // 층 구하기
+        int floor = N % H;
+        if (floor == 0) {   // 층 구하기
+            sb.append(N / H);
+        } else {
+            sb.append(floor);
+        }
         if ((N / H) < 10) { // 호수 구하기
+            sb.append("0" + (N / H));
+        } else if (floor == 0) {
             sb.append("0" + ((N / H) + 1));
         } else {
             sb.append(N / H);
