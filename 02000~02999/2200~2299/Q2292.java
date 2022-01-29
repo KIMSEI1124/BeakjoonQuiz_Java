@@ -11,7 +11,7 @@ public class Q2292 {
     public static void solve() {
         int answer = 1;
         int total = 1;
-        while (total <= num) {
+        while (total < num) {
             total += 6*answer;
             answer++;
         }
