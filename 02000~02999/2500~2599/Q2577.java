@@ -21,26 +21,25 @@ public class Q2577 {
         String result = String.valueOf(arr[0] * arr[1] * arr[2]);
         int[] strArr = new int[10];
         for (int i = 0; i < result.length(); i++) {
-            System.out.println(result.substring(i, i + 1));
-            if (result.substring(i, i + 1) == "0") {
+            if (result.substring(i, i + 1).equals("0")) {
                 strArr[0] += 1;
-            } else if (result.substring(i, i + 1) == "1") {
+            } else if (result.substring(i, i + 1).equals("1")) {
                 strArr[1] += 1;
-            } else if (result.substring(i, i + 1) == "2") {
+            } else if (result.substring(i, i + 1).equals("2")) {
                 strArr[2] += 1;
-            } else if (result.substring(i, i + 1) == "3") {
+            } else if (result.substring(i, i + 1).equals("3")) {
                 strArr[3] += 1;
-            } else if (result.substring(i, i + 1) == "4") {
+            } else if (result.substring(i, i + 1).equals("4")) {
                 strArr[4] += 1;
-            } else if (result.substring(i, i + 1) == "5") {
+            } else if (result.substring(i, i + 1).equals("5")) {
                 strArr[5] += 1;
-            } else if (result.substring(i, i + 1) == "6") {
+            } else if (result.substring(i, i + 1).equals("6")) {
                 strArr[6] += 1;
-            } else if (result.substring(i, i + 1) == "7") {
+            } else if (result.substring(i, i + 1).equals("7")) {
                 strArr[7] += 1;
-            } else if (result.substring(i, i + 1) == "8") {
+            } else if (result.substring(i, i + 1).equals("8")) {
                 strArr[8] += 1;
-            } else if (result.substring(i, i + 1) == "9") {
+            } else if (result.substring(i, i + 1).equals("9")) {
                 strArr[9] += 1;
             }
         }
