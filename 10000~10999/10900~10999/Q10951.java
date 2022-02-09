@@ -16,7 +16,7 @@ public class Q10951 {
     public static void solve() {
         while (true) {
             try {
-                if (sc.hasNext()) {
+                if (sc.hasNext() == true) {
                     input();
                 }
             } catch (NoSuchElementException e) {
