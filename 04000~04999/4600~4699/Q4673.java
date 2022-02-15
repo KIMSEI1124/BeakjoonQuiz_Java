@@ -14,6 +14,6 @@ public class Q4673 {
     }
 
     public static void solve() {
-
+        
     }
 }
