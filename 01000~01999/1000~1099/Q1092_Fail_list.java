@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class Q1092 {
+public class Q1092_Fail_list { // 시간초과 ( 리스트 방식 )
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     static StringTokenizer st;
 
@@ -16,18 +16,14 @@ public class Q1092 {
         ArrayList<Integer> boxList = new ArrayList<>();
         boxList = input(boxList);
         // 리스트 정렬하기
-        Collections.sort(craneList);
+        //Collections.sort(craneList);
         Collections.sort(boxList);
         while (boxList.size() > 0) {
             for (int i = 0; i < crane; i++) {
-                for (int j = 0; j < boxList.size(); j++) {
-                    if (i >= crane) {
-                        break;
-                    }
+                for (int j = boxList.size() - 1; j >= 0; j--) {
                     if (craneList.get(i) >= boxList.get(j)) {
                         boxList.remove(j);
-                        i++;
-                        j--;
+                        break;
                     }
                 }
             }
