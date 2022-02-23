@@ -5,7 +5,7 @@ public class Q1092 {
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     static StringTokenizer st;
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException { // 시간 초과
         int sec = 0;
         // 크래인 배열 생성하기
         int crane = Integer.parseInt(br.readLine());
