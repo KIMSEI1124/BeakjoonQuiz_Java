@@ -3,7 +3,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class Q1018 {
+public class Q1018 {    // 2, 5, 7 오류
     public static void main(String[] args) throws IOException {
         // 보드판 세팅
         String[] B = { "B", "W", "B", "W", "B", "W", "B", "W" };

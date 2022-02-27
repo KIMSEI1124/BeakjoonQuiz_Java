@@ -1,19 +1,20 @@
-import java.util.Scanner;
+import java.io.*;
+import java.util.*;
 
 public class Q2869 {
-
-    static Scanner sc = new Scanner(System.in);
     static int A, B, V;
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         input();
         solve();
     }
 
-    public static void input() {
-        A = sc.nextInt();
-        B = sc.nextInt();
-        V = sc.nextInt();
+    public static void input() throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        A = Integer.parseInt(st.nextToken());
+        B = Integer.parseInt(st.nextToken());
+        V = Integer.parseInt(st.nextToken());
     }
 
     public static void solve() {
