@@ -8,9 +8,14 @@ public class Q1463 {
         int X = sc.nextInt(); // 1 <= x <= 10^6
         int count = 0;
         while (1 < X) {
-            if ( X % 3 == 0) {
+            if ((X - 1) % 3 == 0 || (X - 1) % 3 == 0) {
+                X--;
+            } else if (X % 6 == 0) {
+                X /= 6;
+                count++;
+            } else if (X % 3 == 0) {
                 X /= 3;
-            } else if ( X % 2 == 0) {
+            } else if (X % 2 == 0) {
                 X /= 2;
             } else {
                 X--;
