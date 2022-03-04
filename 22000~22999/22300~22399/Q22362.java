@@ -1,42 +1,93 @@
+import java.io.*;
 import java.util.*;
 
 public class Q22362 {
-    static Scanner sc = new Scanner(System.in);
-
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         StringBuilder sb = new StringBuilder();
-        ArrayList<Bomb> list = new ArrayList<>();
-        int[] WHNDB = new int[5];
-        for (int i = 0; i < 5; i++) {
-            WHNDB[i] = sc.nextInt();
-            if (WHNDB[i] == 0) {
-                System.out.println(sb);
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st;
+        ArrayList<Boom<Integer, Integer, Boolean>> list = new ArrayList<>();
+        Queue<Boom<Integer, Integer, Boolean>> queue = new LinkedList<>();
+        int[] WHNDB = { 100, 100, 100, 100, 100 }; // 폭, 높이, 폭탄의 수, 폭탄의 폭팔 범위, 첫 폭탄의 번호
+        while (WHNDB[0] != 0) {
+            int count = 1;
+            list.clear();
+            st = new StringTokenizer(br.readLine());
+            for (int i = 0; i < 5; i++) { // 세팅
+                WHNDB[i] = Integer.parseInt(st.nextToken());
+            }
+            if (WHNDB[0] == 0) { // 종료 조건
                 break;
             }
+            for (int i = 0; i < WHNDB[2]; i++) { // 폭탄 세팅
+                st = new StringTokenizer(br.readLine());
+                int xPos = Integer.parseInt(st.nextToken());
+                int yPos = Integer.parseInt(st.nextToken());
+                list.add(new Boom<Integer, Integer, Boolean>());
+                list.get(i).setBoom(xPos, yPos, false);
+            }
+            // 폭탄
+            queue.add(list.get(WHNDB[4] - 1));
+            list.get(WHNDB[4] - 1).setisBoom(true);
+            while (queue.isEmpty() == false) {
+                int xBoom = queue.peek().getxPos();
+                int yBoom = queue.peek().getyPos();
+                int xMin = xBoom - WHNDB[3];
+                int xMax = xBoom + WHNDB[3];
+                int yMin = yBoom - WHNDB[3];
+                int yMax = yBoom + WHNDB[3];
+                for (int i = 0; i < list.size(); i++) {
+                    if (list.get(i).getisBoom() == false) { // 안터진 폭탄인것을 확인
+                        int xPos = list.get(i).getxPos();
+                        int yPos = list.get(i).getyPos();
+                        if (yPos == yBoom && xMin <= xPos && xPos <= xMax) { // x범위 확인
+                            queue.add(list.get(i));
+                            list.get(i).setisBoom(true);
+                            count++;
+                        }
+                        if (xPos == xBoom && yMin <= yPos && yPos <= yMax) { // y범위 확인
+                            queue.add(list.get(i));
+                            list.get(i).setisBoom(true);
+                            count++;
+                        }
+                    }
+                }
+                queue.remove(); // 확인된 폭탄 제거
+            }
+            sb.append(count).append("\n");
         }
-        for (int i = 0; i < WHNDB[2]; i++) {
-            list.add(Bomb(sc.nextInt(),sc.nextInt(),true));
-        }
-        System.out.println(list.get(0));
+        System.out.println(sb);
+    }
+}
+
+class Boom<x, y, is> {
+    private x xPos;
+    private y yPos;
+    private is isBoom; // ture 터짐, false 안터짐
+
+    public void setBoom(x xPos, y yPos, is isBoom) {
+        this.xPos = xPos;
+        this.yPos = yPos;
+        this.isBoom = isBoom;
     }
 
-    private static Q22362.Bomb Bomb(int nextInt, int nextInt2, boolean b) {
-        return null;
+    public int getxPos() {
+        return (int) this.xPos;
     }
 
-    public class Bomb {
-        private int xPos;  // X좌표
-        private int yPos;  // Y좌표
-        private boolean bombStatus;  // 폭탄의 상태(터짐,안터짐)
+    public int getyPos() {
+        return (int) this.yPos;
+    }
 
-        public Bomb(int xPos, int yPos, boolean bombStatus) {
-            this.xPos = xPos;
-            this.yPos = yPos;
-            this.bombStatus = bombStatus;
-        }
+    public boolean getisBoom() {
+        return (boolean) this.isBoom;
+    }
 
-        void setBombStatus(int xPos, int yPos, boolean bombStatus) {
-            this.bombStatus = bombStatus;
-        }
+    public void setisBoom(is isBoom) {
+        this.isBoom = isBoom;
+    }
+
+    public void printBoom() {   // 폭탄 확인
+        System.out.println("xPos : " + this.xPos + ", yPos : " + this.yPos + ", isBoom : " + isBoom);
     }
 }
