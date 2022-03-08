@@ -61,7 +61,7 @@ public class Q1050 { // 5,8오류
                 cost[i][j] = hash.get(key[i][j]) * value[i][j] * 1L;
             } else { // 3. 물약을 조합해서 사용해야할 경우
                 for (int k = i + 1; k < key.length; k++) {
-                    if (key[i][j].equals(key[k][0])) { // 3.1 필요한 물약의 제조법이 있을경우, 그 물약의 모든 제조법으로 제조
+                    if (key[i][j].equals(key[k][0])) { // 3.1 필요한 물약의 제조법이 있을경우
                         // 오류 발생!!!!!!! 1을 제작할때 2가 필요함, 2를 제작할때 1이 필요함, 무한 루프 예제 5번
                         hash = potion(key, value, cost, hash, k);
                         cost[i][j] = hash.get(key[i][j]) * value[i][j] * 1L;
