@@ -23,10 +23,10 @@ public class Q2775 {
             for (int j = 0; j < apt[i].length; j++) {
                 if (i == 0) {
                     apt[i][j] = j + 1;
+                } else if (j == 0) {
+                    apt[i][j] = apt[i - 1][j];
                 } else {
-                    for (int k = 0; k <= j; k++) {
-                        apt[i][j] += apt[i - 1][k];
-                    }
+                    apt[i][j] = apt[i - 1][j] + apt[i][j - 1];
                 }
             }
         }
