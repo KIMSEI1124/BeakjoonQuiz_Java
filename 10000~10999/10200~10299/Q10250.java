@@ -6,33 +6,40 @@ import java.util.*;
 public class Q10250 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringBuilder sb = new StringBuilder();
         StringTokenizer st;
         int T = Integer.parseInt(br.readLine());
+        int[] HWN = new int[3];
         while (T > 0) {
             st = new StringTokenizer(br.readLine());
-            int H = Integer.parseInt(st.nextToken()); // 호텔의 층 수
-            int W = Integer.parseInt(st.nextToken()); // 호텔의 방 수
-            int N = Integer.parseInt(st.nextToken()); // 몇번째 손님
-            // 층수 구하기
-            int floor = floor(H, N);
-            System.out.println("층수 : " + floor);
-            // 호수 구하기
+            for (int i = 0; i <= 2; i++) {
+                HWN[i] = Integer.parseInt(st.nextToken());
+            }
+            sb.append(floor(HWN)).append(room(HWN)).append("\n");
             T--;
         }
+        System.out.println(sb);
     }
 
-    public static int floor(int H, int N) {
-        int floor = N % H;
-        return floor;
+    public static String floor(int[] HWN) {
+        int floor = 0;
+        if(HWN[2] / HWN[0] != 0 && HWN[2] % HWN[0] == 0) {
+            floor = HWN[0];
+        } else {
+            floor = HWN[2] % HWN[0];
+        }
+        String strFloor = String.valueOf(floor);
+        return strFloor;
     }
 
-    public static int room(int H, int N) {
-        int room = 0;
-        /*
-         * if (N / H == 0) {
-         * room = 1;
-         * } else if (N % H <= 9 && N / H )
-         */
-        return room;
+    public static String room(int[] HWN) {
+        int room = (int) Math.ceil((double) HWN[2] / HWN[0]);
+        String strRoom;
+        if ((room / 10) == 0) {
+            strRoom = "0" + room;
+        } else {
+            strRoom = "" + room;
+        }
+        return strRoom;
     }
 }
