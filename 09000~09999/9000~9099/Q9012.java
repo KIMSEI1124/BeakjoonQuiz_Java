@@ -1,33 +1,37 @@
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.io.*;
+import java.util.*;
 
 public class Q9012 {
-    static Scanner sc = new Scanner(System.in);
-
-    public static void main(String[] args) {
+    public static void main(String[] args) throws NumberFormatException, IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringBuilder sb = new StringBuilder();
-        int T = Integer.parseInt(sc.nextLine());
+        int T = Integer.parseInt(br.readLine());
         while (T > 0) {
-            String[] PS = sc.nextLine().split("");
-            if (PS.length % 2 == 0) {
-                solve(PS);
-                sb.append("1\n");
-            } else {
+            char[] arr = br.readLine().toCharArray();
+            Stack<Character> stack = new Stack<>();
+            if (arr.length % 2 != 0) {
                 sb.append("NO\n");
+            } else {
+                for (int i = 0; i < arr.length; i++) {
+                    char c = arr[i];
+                    if (stack.size() >= 1) {
+                        if (c == ')' && stack.peek() == '(') {
+                            stack.pop();
+                        } else {
+                            stack.push(c);
+                        }
+                    } else {
+                        stack.push(c);
+                    }
+                }
+                if (stack.size() == 0) {
+                    sb.append("YES\n");
+                } else {
+                    sb.append("NO\n");
+                }
             }
             T--;
         }
         System.out.println(sb);
-    }
-
-    public static void solve(String[] PS) {
-        ArrayList<String> list = new ArrayList<>();
-        for(String i : PS) {
-            list.add(i);
-        }
-        int N = list.size();
-        while(N>0){
-            
-        }
     }
 }
