@@ -24,7 +24,7 @@ public class Q1107 {
                 if (!list.contains(num)) {
                     ch += num * (int) Math.pow(10, nStr.length() - 1 - i);
                 } else {
-
+                    
                 }
             }
             // +, - 버튼 누르기
