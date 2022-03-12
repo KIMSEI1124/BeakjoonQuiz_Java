@@ -22,10 +22,9 @@ public class Q1157 {
                 return b.getCount() - a.getCount();
             }
         };
-
         Collections.sort(list, comparator);
         if (list.size() > 1) {
-            if (list.get(0).getCount() != list.get(1).getCount()) {
+            if (!list.get(0).getCount().equals(list.get(1).getCount())) {
                 System.out.println(list.get(0).getAlphabet());
             } else {
                 System.out.println("?");
@@ -64,5 +63,9 @@ class Alphabet<A, C> {
 
     public C getCount() {
         return this.count;
+    }
+
+    public void print() {
+        System.out.println(Alphabet);
     }
 }
