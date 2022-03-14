@@ -66,6 +66,6 @@ class Alphabet<A, C> {
     }
 
     public void print() {
-        System.out.println(Alphabet);
+        System.out.println("Alphabet : " + Alphabet + ", Count : " + count);
     }
 }
