@@ -1,21 +1,13 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.StringTokenizer;
+import java.io.*;
+import java.util.*;
 
 public class Q1072 {
-    static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-    static StringTokenizer st;
-    static int total;
-    static int win;
-
     public static void main(String[] args) throws IOException {
-        input();
-        System.out.println(total+" "+win);
-    }
-    public static void input() throws IOException {
-        st = new StringTokenizer(br.readLine());
-        total = br.read();
-        win = br.read();
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+        int X = Integer.parseInt(st.nextToken());
+        int Y = Integer.parseInt(st.nextToken());
+        int Score = (Y / X)*100;
+        System.out.println(Score);
     }
 }
