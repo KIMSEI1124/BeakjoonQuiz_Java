@@ -1,6 +1,8 @@
 import java.io.*;
 import java.util.*;
 
+// 이분탐색
+
 public class Q1620 {
     public static void main(String[] args) throws NumberFormatException, IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
