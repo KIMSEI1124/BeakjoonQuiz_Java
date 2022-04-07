@@ -14,6 +14,9 @@ public class Q1620 {
         for (int i = 1; i <= N; i++) {
             poekmon.put(i, br.readLine());
         }
+        for (int i = 1; i <= N; i++) {
+            poekmon.put(i, br.readLine());
+        }
         while (M > 0) {
             String str = br.readLine();
             int strInt;
@@ -31,5 +34,34 @@ public class Q1620 {
             M--;
         }
         System.out.println(sb);
+    }
+
+    public static void bs() {
+
+    }
+}
+
+class pokemon<C, T> {
+    private C startAlphabat;    // char
+    private T pokemonBook;      // TreeMap<Integer, String>
+
+    public void setSA(C startAlphabat) {
+        this.startAlphabat = startAlphabat;
+    }
+
+    public void setPB(T pokemonBook) {
+        this.pokemonBook = pokemonBook;
+    }
+
+    public void addPB(T pokemnBook) {
+
+    }
+
+    public C getSA() {
+        return this.startAlphabat;
+    }
+
+    public T getPB() {
+        return this.pokemonBook;
     }
 }
