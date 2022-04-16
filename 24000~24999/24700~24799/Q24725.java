@@ -1,8 +1,5 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.nio.Buffer;
-import java.util.StringTokenizer;
+import java.io.*;
+import java.util.*;
 
 public class Q24725 {
     public static void main(String[] args) throws IOException {
@@ -31,25 +28,25 @@ public class Q24725 {
 
     public static void rightUp(String[][] arr, int i, int j) {
         String next;
-        // i-, j+
+        // i-, j+ (대각선 위)
         next = arr[i - 1][j + 1];
     }
 
     public static void right(String[][] arr, int i, int j) {
         String next;
-        // -, j+
+        // -, j+ (오른쪽)
         next = arr[i][j + 1];
     }
 
     public static void rightDown(String[][] arr, int i, int j) {
         String next;
-        // i+, j+
+        // i+, j+ (대각선 아래)
         next = arr[i + 1][j + 1];
     }
 
     public static void down(String[][] arr, int i, int j) {
         String next;
-        // i+, -
+        // i+, - (아래)
         next = arr[i + 1][j];
     }
 }

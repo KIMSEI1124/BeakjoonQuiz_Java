@@ -3,7 +3,10 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class Q1018 {    // 2, 5, 7 오류
+public class Q1018 {
+    // 2 -> 12, 28
+    // 5 -> 0 , 8
+    // 7 -> 15, 30
     public static void main(String[] args) throws IOException {
         // 보드판 세팅
         String[] B = { "B", "W", "B", "W", "B", "W", "B", "W" };
@@ -23,7 +26,7 @@ public class Q1018 {    // 2, 5, 7 오류
         int min = 64; // 최소로 교환해야할 네모칸
         int bCheck;
         int wCheck;
-        int xPos = 0, yPos = 0;
+        int xPos = 0, yPos = 0; // 확인용
         for (int i = 0; i <= N - 8; i++) { // board판 y축
             for (int j = 0; j <= M - 8; j++) { // board판 x축
                 bCheck = 0;
@@ -42,15 +45,15 @@ public class Q1018 {    // 2, 5, 7 오류
                         if (!board[y + i][x + j].equals(wBoard[y][x])) {
                             wCheck += 1;
                         }
-                        if (x == 7 && y == 7) {
+                        if (y == 7 && x == 7) {
                             if (min > Math.min(wCheck, bCheck)) {
                                 min = Math.min(wCheck, bCheck);
-                                xPos = i;
-                                yPos = j;
+                                xPos = i; yPos = j; // 확인용
                             }
                         }
                     }
                 }
+                System.out.println(j + " " + i + " " + min);
             }
         }
         System.out.println(min);
