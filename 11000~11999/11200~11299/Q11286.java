@@ -10,7 +10,7 @@ public class Q11286 {
         // input
         int N = Integer.parseInt(br.readLine());
         // solve
-        solve2(N);
+        solve1(N);
         // output
         System.out.println(ans);
     }
@@ -53,7 +53,7 @@ public class Q11286 {
         PriorityQueue<Integer> pq = new PriorityQueue<>((o1, o2) -> {   // compareTo 공부하기
             int abs1 = Math.abs(o1);
             int abs2 = Math.abs(o2);
-            if (abs1 == abs2) {
+            if (abs1 == abs2) { // 절대값이 같으면
                 return o1 > o2 ? 1 : -1;    // 삼항연산자 
             } else {
                 return abs1 - abs2;
