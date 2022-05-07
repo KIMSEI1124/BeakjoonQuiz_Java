@@ -9,6 +9,13 @@ public class Q11286 {
     public static void main(String[] args) throws IOException {
         // input
         int N = Integer.parseInt(br.readLine());
+        // solve
+        solve2(N);
+        // output
+        System.out.println(ans);
+    }
+
+    public static void solve1(int N) throws IOException {
         PriorityQueue<Integer> pq1 = new PriorityQueue<>(); // 양수
         PriorityQueue<Integer> pq2 = new PriorityQueue<>(Collections.reverseOrder()); // 음수
         // solve
@@ -40,7 +47,31 @@ public class Q11286 {
             }
             N--;
         }
-        // output
-        System.out.println(ans);
+    }
+
+    public static void solve2(int N) throws IOException {
+        PriorityQueue<Integer> pq = new PriorityQueue<>((o1, o2) -> {   // compareTo 공부하기
+            int abs1 = Math.abs(o1);
+            int abs2 = Math.abs(o2);
+            if (abs1 == abs2) {
+                return o1 > o2 ? 1 : -1;    // 삼항연산자 
+            } else {
+                return abs1 - abs2;
+            }
+        });
+        while (N > 0) {
+            int input_num = Integer.parseInt(br.readLine());
+            if (input_num == 0) {
+                if (pq.isEmpty()) {
+                    ans.append("0\n");
+                } else {
+                    ans.append(pq.poll()).append("\n");
+                }
+            } else {
+                pq.add(input_num);
+            }
+            System.out.println(pq);
+            N--;
+        }
     }
 }
