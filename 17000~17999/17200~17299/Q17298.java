@@ -10,35 +10,29 @@ public class Q17298 {
         // input
         int N = Integer.parseInt(br.readLine());
         st = new StringTokenizer(br.readLine());
-        br.close();
-        // int[] arr = new int[N];
-        Stack<Integer> stack = new Stack<>();
-        // solve
-        int start_num = Integer.parseInt(st.nextToken());
-        stack.push(start_num);
-        int high = start_num;
-        while (st.hasMoreTokens()) {
-            int num = Integer.parseInt(st.nextToken());
-            System.out.println(stack);
-            stack = check(stack, num);
+        int[] arr = new int[N + 1];
+        int[] nge_arr = new int[N + 1];
+        Stack<Integer> stack = new Stack<>(); // arr의 index값 저장
+        for (int i = 1; i < arr.length; i++) {
+            arr[i] = Integer.parseInt(st.nextToken());
         }
-        ans.append("-1");
+        // solve
+        for (int i = 0; i < arr.length; i++) {
+            int num = arr[i];
+            while (!stack.isEmpty() && num > arr[stack.peek()]) {
+                int arr_id = stack.pop();
+                nge_arr[arr_id] = num;
+            }
+            stack.push(i);
+        }
+        for (int i = 1; i < nge_arr.length; i++) {
+            if (nge_arr[i] == 0) { // 값이 없으면
+                ans.append("-1").append(" "); // -1
+            } else { // 값이 있으면
+                ans.append(nge_arr[i]).append(" "); // 오큰수
+            }
+        }
         // output
         System.out.println(ans);
-    }
-
-    public static Stack<Integer> check(Stack<Integer> stack, int num) {
-        if (stack.peek() < num) {
-            ans.append(num).append(" ");
-            if (stack.isEmpty()) {
-                stack.push(num);
-                return stack;
-            }
-            stack.pop();
-            return stack = check(stack, num);
-        } else {
-            stack.push(num);
-            return stack;
-        }
     }
 }

@@ -48,12 +48,12 @@ public class Q23629 {
         System.out.println(ans);
     }
 
-    public static Long add() {  // 더하기
+    public static Long add() { // 더하기
         Long add = 0L;
         return add;
     }
 
-    public static Long substract() {    // 빼기 
+    public static Long substract() { // 빼기
         Long add = 0L;
         return add;
     }
@@ -63,7 +63,7 @@ public class Q23629 {
         return add;
     }
 
-    public static Long divide() {   // 나누기
+    public static Long divide() { // 나누기
         Long add = 0L;
         return add;
     }
