@@ -19,30 +19,33 @@ public class Q1260 {
             st = new StringTokenizer(br.readLine());
             int start_node = Integer.parseInt(st.nextToken());
             int end_node = Integer.parseInt(st.nextToken());
-            input(start_node, end_node);
+            input(start_node, end_node, V);
             M--;
         }
+
         // solve
-        DFS(N, V);
-        BFS(N, V);
+        visited = new boolean[1001];
+        DFS(V);
+        ans.append("\n");
+
+        visited = new boolean[1001];
+        BFS(V);
+
         // output
         System.out.println(ans);
     }
 
-    static public void BFS(int N, int V) {
+    static public void BFS(int V) {
         Queue<Integer> queue = new LinkedList<>();
         List<Integer> list;
-
-        visited = new boolean[1001];
         queue.add(V);
         visited[V] = true;
-        while(!queue.isEmpty()) {
+        while (!queue.isEmpty()) {
             int node = queue.poll();
             ans.append(node).append(" ");
             list = map.get(node);
-            Collections.sort(list);
             for (Integer index : list) {
-                if(!visited[index]) {
+                if (!visited[index]) {
                     queue.add(index);
                     visited[index] = true;
                 }
@@ -50,38 +53,33 @@ public class Q1260 {
         }
     }
 
-    static public void DFS(int N, int V) {
-        Stack<Integer> stack = new Stack<>();
-        List<Integer> list;
-
-        visited = new boolean[1001];
-        stack.add(V);
+    static public void DFS(int V) {
+        ans.append(V).append(" ");
+        List<Integer> list = map.get(V);
+        Collections.sort(list);
         visited[V] = true;
-        while(!stack.isEmpty()) {
-            int node = stack.pop();
-            ans.append(node).append(" ");
-            list = map.get(node);
-            Collections.sort(list);
-            for (Integer index : list) {
-                if(!visited[index]) {
-                    stack.add(index);
-                    visited[index] = true;
-                }
+        for (Integer index : list) {
+            if(!visited[index]) {
+                DFS(index);
             }
         }
-        ans.append("\n");
     }
 
-    static public void input(int start_node, int end_node) {
+    static public void input(int start_node, int end_node, int V) {
         List<Integer> list;
-        if (!map.containsKey(start_node)) {
+        // 양방향 삽압
+        if(!map.containsKey(V)) {
             list = new ArrayList<>();
-            list.add(end_node);
-            map.put(start_node, list);
-        } else {
-            list = map.get(start_node);
-            list.add(end_node);
-            map.replace(start_node, list);
+            map.put(V, list);
+        }
+        if (!map.containsKey(start_node)) { // 없을경우
+            list = new ArrayList<>(); // 리스트 생성후
+            list.add(end_node); // 노드 추가
+            map.put(start_node, list); // HashMap에 저장
+        } else { // 존재할 경우
+            list = map.get(start_node); // 리스트 불러와서
+            list.add(end_node); // 리스트에 추가
+            map.replace(start_node, list); // HashMap에 저장
         }
         if (!map.containsKey(end_node)) {
             list = new ArrayList<>();
@@ -90,7 +88,7 @@ public class Q1260 {
         } else {
             list = map.get(end_node);
             list.add(start_node);
-            map.remove(end_node, list);
+            map.replace(end_node, list);
         }
     }
 }
