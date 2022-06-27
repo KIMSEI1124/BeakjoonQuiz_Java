@@ -8,7 +8,7 @@ public class Q2178 {
     static int N, M;
     static char[][] maze;
     static boolean[][] visted;
-    static Queue<pos<Integer, Integer>> maze_pos;
+    static List<Queue<pos<Integer, Integer>>> maze_pos;
 
     public static void main(String[] args) throws IOException {
         // input
@@ -27,28 +27,50 @@ public class Q2178 {
         }
 
         // solve
-        pos<Integer, Integer> start_pos = new pos<>();
-        start_pos.set_pos(0, 0);
-        maze_pos.add(start_pos);
-        visted[start_pos.get_y_pos()][start_pos.get_x_pos()] = true;
-        while (true) {
-            int x_pos = maze_pos.peek().get_x_pos();
-            int y_pos = maze_pos.poll().get_y_pos();
-            if (y_pos == N && x_pos == M) {
-                break;
+        pos<Integer, Integer> pos = new pos<>();
+        boolean run = true;
+        while (run) {
+            maze_pos.add(new LinkedList<>());
+            if (maze_pos.size() == 0) { // 시작
+                pos.set_pos(0, 0);
+                visted[pos.get_y_pos()][pos.get_x_pos()] = true;
+                maze_pos.get(maze_pos.size() - 1).add(pos);
+            }
+            System.out.println(maze_pos.get(maze_pos.size()-1).size());
+            for (int i = 0; i < maze_pos.get(maze_pos.size() - 1).size(); i++) {
+                int x_pos = maze_pos.get(maze_pos.size() - 1).peek().get_x_pos();
+                int y_pos = maze_pos.get(maze_pos.size() - 1).poll().get_y_pos();
+                if (y_pos == N + 1 && x_pos == M + 1) {
+                    break;
+                }
+                bfs(y_pos, x_pos);
             }
         }
 
         // output
-        System.out.println(ans);
+        System.out.println(maze_pos.size());
     }
 
-    static int[] x = { 0, 0, -1, 1 };
-    static int[] y = { -1, 1, 0, 0 };
+    static int[] x_pos = { 0, 0, -1, 1 };
+    static int[] y_pos = { -1, 1, 0, 0 };
 
     static public void bfs(int y, int x) {
         if (visted[y][x] == true) {
             return;
+        }
+        for (int i = 0; i < 4; i++) {
+            int x_calc = x + x_pos[i];
+            int y_calc = y + y_pos[i];
+            if (x_calc < 0 || x_calc > M)
+                continue;
+            if (y_calc < 0 || y_calc > N)
+                continue;
+            if (maze[y_calc][x_calc] == '1' && visted[y_calc][x_calc] == false) {
+                visted[y_calc][x_calc] = true;
+                pos<Integer, Integer> pos = new pos<>();
+                pos.set_pos(x_calc, y_calc);
+                maze_pos.get(maze_pos.size() - 1).add(pos);
+            }
         }
     }
 }
