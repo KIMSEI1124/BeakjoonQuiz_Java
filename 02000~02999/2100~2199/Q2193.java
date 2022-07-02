@@ -7,7 +7,6 @@ public class Q2193 {
     static StringTokenizer st;
 
     static int N;
-
     static long[][] DP;
 
     public static void main(String[] args) throws IOException {
