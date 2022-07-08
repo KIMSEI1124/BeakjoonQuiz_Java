@@ -10,7 +10,7 @@ public class Q1167 {
     static boolean[] visited;
     static Queue<Integer> queue = new LinkedList<>(); // 좌표값만 저장
     static int[] length;
-    static List<List<Map<Integer, Integer>>> tree = new ArrayList<>();
+    static List<List<Node_1167<Integer, Integer>>> tree = new ArrayList<>();
 
     public static void main(String[] args) throws IOException {
         // input
@@ -18,36 +18,59 @@ public class Q1167 {
         visited = new boolean[V + 1];
         length = new int[V + 1];
 
-        for (int i = 0; i < V; i++) {
+        Node_1167<Integer, Integer> node;
+        tree.add(new ArrayList<>());
+        for (int i = 1; i <= V; i++) {
             tree.add(new ArrayList<>());
             st = new StringTokenizer(br.readLine());
             int id = Integer.parseInt(st.nextToken()); // 정점의 Id
             while (st.hasMoreTokens()) {
-                int node = Integer.parseInt(st.nextToken());
-                if (node != -1) {
-                    int edge = Integer.parseInt(st.nextToken());
-                    Map<Integer, Integer> node_map = new HashMap<>();
-                    node_map.put(node, edge); // 정점, 간선의 거리
-                    tree.get(id - 1).add(node_map);
+                int target_id = Integer.parseInt(st.nextToken());
+                node = new Node_1167<>();
+                if (target_id != -1) {
+                    node.set_node(target_id, Integer.parseInt(st.nextToken()));
+                    tree.get(id).add(node);
                 }
             }
         }
 
         // solve
-        queue.add(1);
-        while (!queue.isEmpty()) {
-            int pos = queue.poll();
-            visited[pos] = true; // 방문확인
-            for (Map<Integer, Integer> node : tree.get(pos)) {
-                // int node_pos = node.get(key)
-                // HashMap으로 하니 Key값을 알수가 없다.
-                // id도 따로 저장을 해둬야 하는가?... -- 메모리 증가
-                // 아니면 다른 방식이 있을까?
-                // 객체를 만들어 두고 for문을 돌린다?... 
-            }
+        int len = 0;
+        dfs(1, len);
 
-        }
         // output
         System.out.println(ans);
+    }
+
+    public static void dfs(int id, int len) {
+        visited[id] = true;
+
+        Node_1167<Integer, Integer> new_node;
+        for (int i = 0; i < tree.get(id).size(); i++) {
+            new_node = new Node_1167<>();
+            if (!visited[new_node.get_id()]) {
+                len += new_node.get_length();
+                dfs(new_node.get_id(), len);
+                System.out.println("id : \"" + new_node.get_id() + "\", len : \"" + new_node.get_length() + "\"");
+            }
+        }
+    }
+}
+
+class Node_1167<id, length> {
+    private int id;
+    private int length;
+
+    public void set_node(int id, int length) {
+        this.id = id;
+        this.length = length;
+    }
+
+    public int get_id() {
+        return this.id;
+    }
+
+    public int get_length() {
+        return this.length;
     }
 }
