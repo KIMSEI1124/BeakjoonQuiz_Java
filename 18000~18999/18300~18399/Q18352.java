@@ -33,14 +33,17 @@ public class Q18352 {
         // solve
         queue.add(X);
         visited[X] = true;
-        for (int i = 1; i <= K; i++) {
-            bfs(i);
+        for (int i = 0; i < K; i++) {
+            bfs();
         }
 
         // output
-        if (target_citys.size() == 0) {
+        if (queue.size() == 0) {
             ans.append("-1");
         } else {
+            while (!queue.isEmpty()) {
+                target_citys.add(queue.poll());
+            }
             Collections.sort(target_citys);
             for (Integer id : target_citys) {
                 ans.append(id + "\n");
@@ -49,7 +52,7 @@ public class Q18352 {
         System.out.println(ans);
     }
 
-    public static void bfs(int length) {
+    public static void bfs() {
         int queue_size = queue.size();
         while (queue_size > 0) {
             int city_id = queue.poll();
@@ -57,14 +60,9 @@ public class Q18352 {
                 if (visited[id]) {
                     continue;
                 }
-                if (length == K) {
-                    target_citys.add(id);
-                } else {
-                    visited[id] = true;
-                }
+                visited[id] = true;
                 queue.add(id);
             }
-
             queue_size--;
         }
     }
