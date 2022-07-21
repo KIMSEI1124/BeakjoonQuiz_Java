@@ -2,92 +2,79 @@ import java.io.*;
 import java.util.*;
 
 public class Q6086 {
-    public static void main(String[] args) throws NumberFormatException, IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st;
-        int N = Integer.parseInt(br.readLine());
-        ArrayList<pipe<String, String, Integer>> pipeList = new ArrayList<>();
-        String StartPoint;
-        String EndPoint;
-        int water;
-        for (int i = 0; i < N; i++) { // 파이프의 정보를 담기
+    static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    static StringBuilder ans = new StringBuilder();
+    static StringTokenizer st;
+    static int N;
+    static List<String> pipe_id;
+    static List<List<Node6068<String, String, Integer>>> pipe;
+
+    public static void main(String[] args) throws IOException {
+        // input
+        N = Integer.parseInt(br.readLine()); // 파이프 정보의 개수
+
+        pipe = new ArrayList<>(); // 파이프의 정보
+        pipe_id = new ArrayList<>(); // 파이프의 id
+
+        String start_node; // 파이프의 시작 지점
+        String target_node; // 파이프의 끝나는 지점
+        int water; // 유량
+
+        Node6068<String, String, Integer> node;
+
+        for (int i = 0; i < N; i++) {
             st = new StringTokenizer(br.readLine());
-            StartPoint = st.nextToken();
-            EndPoint = st.nextToken();
+            start_node = st.nextToken();
+            target_node = st.nextToken();
             water = Integer.parseInt(st.nextToken());
-            pipeList.add(new pipe<String, String, Integer>());
-            pipeList.get(i).setPipe(StartPoint, EndPoint, water);
-        }
-        while (N > 0) {
-            for (int i = 0; i < pipeList.size() - 1; i++) {
-                for (int j = i + 1; j < pipeList.size(); j++) {
-                    String pipeOneSP = pipeList.get(i).getSP();
-                    String pipeOneEP = pipeList.get(i).getEP();
-                    String pipeTwoSP = pipeList.get(j).getSP();
-                    String pipeTwoEP = pipeList.get(j).getEP();
-                    int pipeOneW = pipeList.get(i).getW();
-                    int pipeTwoW = pipeList.get(j).getW();
-                    // POSP가 A이고 PTED가 Z이면서 POED와 PTSP가 같을경우 합침
-                    if (pipeOneSP.equals("A") && pipeTwoEP.equals("Z") && pipeOneEP.equals(pipeTwoSP)) {
-                        pipeList.add(new pipe<String, String, Integer>());
-                        pipeList.get(0).setPipe(pipeOneSP, pipeTwoEP, Math.min(pipeOneW, pipeTwoW));
-                        // 두개의 파이프를 합쳤으므로 삭제한다.
-                        pipeList.remove(j+1);
-                        pipeList.remove(i+1);
-                    } else if (pipeTwoSP.equals("A") && pipeOneEP.equals("Z") && pipeTwoEP.equals(pipeOneSP)) {
-                        pipeList.add(new pipe<String, String, Integer>());
-                        pipeList.get(0).setPipe(pipeTwoSP, pipeOneEP, Math.min(pipeOneW, pipeTwoW));
-                        // 두개의 파이프를 합쳤으므로 삭제한다.
-                        pipeList.remove(j+1);
-                        pipeList.remove(i+1);
-                    }
-                    if (pipeOneSP.equals(pipeTwoSP) && pipeOneEP.equals(pipeTwoEP)) { // 두개의 파이프의 SP와 EP가 동일할때 W를 합친다.
-                        pipeList.add(new pipe<String, String, Integer>());
-                        pipeList.get(pipeList.size() - 1).setPipe(pipeOneSP, pipeOneSP,
-                                pipeOneW + pipeTwoW);
-                        pipeList.remove(j+1);
-                        pipeList.remove(i+1);
-                    } else if (pipeOneEP.equals(pipeTwoSP)) { // 1번 파이프의 EP와 2번 파이프의 SP가 1번 파이프의 SP와 2번 파이프의 EP와 두개의
-                                                              // 파이프중 W가 작은 것을 저장한다.
-                        pipeList.add(new pipe<String, String, Integer>());
-                        pipeList.get(0).setPipe(pipeOneSP, pipeTwoEP, Math.min(pipeOneW, pipeTwoW));
-                        pipeList.remove(j+1);
-                        pipeList.remove(i+1);
+            node = new Node6068<>();
+            node.set_node(start_node, target_node, water);
+
+            if (!pipe_id.contains(start_node)) { // 시작 노드가 존재하지 않으면
+                pipe_id.add(start_node); // Id 저장
+                pipe.add(new ArrayList<>());
+                pipe.get(pipe.size() - 1).add(node);
+            } else {    // 시작 노드가 존재하면
+                for (int j = 0; j < pipe.size(); j++) { // Id 찾기
+                    if (pipe_id.get(j).equals(start_node)) {
+                        pipe.get(j).add(node);
+                        break;
                     }
                 }
             }
-            N--;
         }
-        for (int i = 0; i < pipeList.size(); i++) {
-            pipeList.get(i).printPipe();
-        }
+        // solve
+
+
+        // output
+        System.out.println(ans);
+    }
+
+    public static void dfs() {
+        
     }
 }
 
-class pipe<SP, EP, W> {
-    private SP StartPoint;
-    private EP EndPoint;
-    private W water;
+class Node6068<S, T, W> {
+    private String start; // 시작 지점
+    private String target; // 끝나는 지점
+    private int water; // 유량
 
-    public void setPipe(SP StartPoint, EP EndPoint, W water) {
-        this.StartPoint = StartPoint;
-        this.EndPoint = EndPoint;
+    public void set_node(String start, String target, int water) {
+        this.start = start;
+        this.target = target;
         this.water = water;
     }
 
-    public SP getSP() {
-        return this.StartPoint;
+    public String get_start() {
+        return this.start;
     }
 
-    public EP getEP() {
-        return this.EndPoint;
+    public String get_target() {
+        return this.target;
     }
 
-    public W getW() {
+    public int get_water() {
         return this.water;
-    }
-
-    public void printPipe() {
-        System.out.println("SP : " + this.StartPoint + ", EP : " + this.EndPoint + ", W : " + this.water);
     }
 }
