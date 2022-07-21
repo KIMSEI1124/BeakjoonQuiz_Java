@@ -12,6 +12,9 @@ public class Q1260 {
         // input
         st = new StringTokenizer(br.readLine());
         int N = Integer.parseInt(st.nextToken());
+        if (N == 0) {   // 수정
+
+        }
         int M = Integer.parseInt(st.nextToken());
         int V = Integer.parseInt(st.nextToken());
         map = new HashMap<>();
@@ -59,7 +62,7 @@ public class Q1260 {
         Collections.sort(list);
         visited[V] = true;
         for (Integer index : list) {
-            if(!visited[index]) {
+            if (!visited[index]) {
                 DFS(index);
             }
         }
@@ -68,7 +71,7 @@ public class Q1260 {
     static public void input(int start_node, int end_node, int V) {
         List<Integer> list;
         // 양방향 삽압
-        if(!map.containsKey(V)) {
+        if (!map.containsKey(V)) {
             list = new ArrayList<>();
             map.put(V, list);
         }

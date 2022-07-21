@@ -1,5 +1,4 @@
 import java.io.*;
-import java.util.*;
 
 public class Q2851 {
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -33,6 +32,5 @@ public class Q2851 {
         }
         // output
         System.out.println(ans);
-        //System.out.println(Arrays.toString(arr));
     }
 }
