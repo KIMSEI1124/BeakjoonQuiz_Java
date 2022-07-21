@@ -16,12 +16,10 @@ public class Q1987 {
         graph = new char[R][C];
         for (int i = 0; i < R; i++) {
             graph[i] = br.readLine().replaceAll(" ", "").toCharArray();
-            System.out.println(Arrays.toString(graph[i]));
         }
 
         // solve
-        int depth = 0;
-        dfs(0, 0, depth);
+        dfs(0, 0, 0);
 
         // output
         System.out.println(count);
@@ -51,6 +49,8 @@ public class Q1987 {
             }
             dfs(new_y, new_x, depth);
         }
+
+        visited[(int) graph[y][x] - 'A'] = false; // 백트래킹
         count = Math.max(depth, count);
     }
 }
