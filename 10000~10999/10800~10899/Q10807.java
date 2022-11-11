@@ -6,6 +6,7 @@ public class Q10807 {
     private static StringTokenizer st;
 
     public static void main(String[] args) throws IOException {
+        solvedFor();
         solvedMap();
     }
 
