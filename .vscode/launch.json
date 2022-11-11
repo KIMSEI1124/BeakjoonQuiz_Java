@@ -1,0 +1,1030 @@
+{
+    // IntelliSense를 사용하여 가능한 특성에 대해 알아보세요.
+    // 기존 특성에 대한 설명을 보려면 가리킵니다.
+    // 자세한 내용을 보려면 https://go.microsoft.com/fwlink/?linkid=830387을(를) 방문하세요.
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch Q10282",
+            "request": "launch",
+            "mainClass": "Q10282",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q18186",
+            "request": "launch",
+            "mainClass": "Q18186",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q11619",
+            "request": "launch",
+            "mainClass": "Q11619",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q18185",
+            "request": "launch",
+            "mainClass": "Q18185",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q2573",
+            "request": "launch",
+            "mainClass": "Q2573",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q2644",
+            "request": "launch",
+            "mainClass": "Q2644",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q12851",
+            "request": "launch",
+            "mainClass": "Q12851",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q25214",
+            "request": "launch",
+            "mainClass": "Q25214",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q1697",
+            "request": "launch",
+            "mainClass": "Q1697",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q15650",
+            "request": "launch",
+            "mainClass": "Q15650",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q1316",
+            "request": "launch",
+            "mainClass": "Q1316",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q1987",
+            "request": "launch",
+            "mainClass": "Q1987",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q1010",
+            "request": "launch",
+            "mainClass": "Q1010",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q6086",
+            "request": "launch",
+            "mainClass": "Q6086",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q18405",
+            "request": "launch",
+            "mainClass": "Q18405",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q1063",
+            "request": "launch",
+            "mainClass": "Q1063",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q1092",
+            "request": "launch",
+            "mainClass": "Q1092",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q1003",
+            "request": "launch",
+            "mainClass": "Q1003",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q2407",
+            "request": "launch",
+            "mainClass": "Q2407",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q1918",
+            "request": "launch",
+            "mainClass": "Q1918",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q9019",
+            "request": "launch",
+            "mainClass": "Q9019",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q16236",
+            "request": "launch",
+            "mainClass": "Q16236",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q1325",
+            "request": "launch",
+            "mainClass": "Q1325",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q18352",
+            "request": "launch",
+            "mainClass": "Q18352",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q1715",
+            "request": "launch",
+            "mainClass": "Q1715",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q2343",
+            "request": "launch",
+            "mainClass": "Q2343",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q7576",
+            "request": "launch",
+            "mainClass": "Q7576",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q1245",
+            "request": "launch",
+            "mainClass": "Q1245",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q1240",
+            "request": "launch",
+            "mainClass": "Q1240",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q1665",
+            "request": "launch",
+            "mainClass": "Q1665",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q1655",
+            "request": "launch",
+            "mainClass": "Q1655",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q11003",
+            "request": "launch",
+            "mainClass": "Q11003",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q12759",
+            "request": "launch",
+            "mainClass": "Q12759",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q9080",
+            "request": "launch",
+            "mainClass": "Q9080",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q1167",
+            "request": "launch",
+            "mainClass": "Q1167",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q11726",
+            "request": "launch",
+            "mainClass": "Q11726",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q2193",
+            "request": "launch",
+            "mainClass": "Q2193",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q14501",
+            "request": "launch",
+            "mainClass": "Q14501",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q1463",
+            "request": "launch",
+            "mainClass": "Q1463",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q11723",
+            "request": "launch",
+            "mainClass": "Q11723",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q2468",
+            "request": "launch",
+            "mainClass": "Q2468",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q16953",
+            "request": "launch",
+            "mainClass": "Q16953",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q21941",
+            "request": "launch",
+            "mainClass": "Q21941",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q1300",
+            "request": "launch",
+            "mainClass": "Q1300",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q2178",
+            "request": "launch",
+            "mainClass": "Q2178",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q4963",
+            "request": "launch",
+            "mainClass": "Q4963",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q1012",
+            "request": "launch",
+            "mainClass": "Q1012",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q2606",
+            "request": "launch",
+            "mainClass": "Q2606",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q16964",
+            "request": "launch",
+            "mainClass": "Q16964",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q1260",
+            "request": "launch",
+            "mainClass": "Q1260",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q13023",
+            "request": "launch",
+            "mainClass": "Q13023",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q2667",
+            "request": "launch",
+            "mainClass": "Q2667",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q11724",
+            "request": "launch",
+            "mainClass": "Q11724",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q1517",
+            "request": "launch",
+            "mainClass": "Q1517",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q11004",
+            "request": "launch",
+            "mainClass": "Q11004",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q1427",
+            "request": "launch",
+            "mainClass": "Q1427",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q11279",
+            "request": "launch",
+            "mainClass": "Q11279",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q11286",
+            "request": "launch",
+            "mainClass": "Q11286",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q2164",
+            "request": "launch",
+            "mainClass": "Q2164",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q17298",
+            "request": "launch",
+            "mainClass": "Q17298",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q1927",
+            "request": "launch",
+            "mainClass": "Q1927",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q10866",
+            "request": "launch",
+            "mainClass": "Q10866",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q12891",
+            "request": "launch",
+            "mainClass": "Q12891",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q1253",
+            "request": "launch",
+            "mainClass": "Q1253",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q1940",
+            "request": "launch",
+            "mainClass": "Q1940",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q2018",
+            "request": "launch",
+            "mainClass": "Q2018",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q11658",
+            "request": "launch",
+            "mainClass": "Q11658",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch tes",
+            "request": "launch",
+            "mainClass": "tes",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q23629",
+            "request": "launch",
+            "mainClass": "Q23629",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q11441",
+            "request": "launch",
+            "mainClass": "Q11441",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q1019",
+            "request": "launch",
+            "mainClass": "Q1019",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q2559",
+            "request": "launch",
+            "mainClass": "Q2559",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q2167",
+            "request": "launch",
+            "mainClass": "Q2167",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q2851",
+            "request": "launch",
+            "mainClass": "Q2851",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q11660",
+            "request": "launch",
+            "mainClass": "Q11660",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q11659",
+            "request": "launch",
+            "mainClass": "Q11659",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q22362",
+            "request": "launch",
+            "mainClass": "Q22362",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q18111",
+            "request": "launch",
+            "mainClass": "Q18111",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q1018",
+            "request": "launch",
+            "mainClass": "Q1018",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q1306",
+            "request": "launch",
+            "mainClass": "Q1306",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q1016",
+            "request": "launch",
+            "mainClass": "Q1016",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q1001",
+            "request": "launch",
+            "mainClass": "Q1001",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q15649",
+            "request": "launch",
+            "mainClass": "Q15649",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q1000",
+            "request": "launch",
+            "mainClass": "Q1000",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q24900",
+            "request": "launch",
+            "mainClass": "Q24900",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q2231",
+            "request": "launch",
+            "mainClass": "Q2231",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q24725",
+            "request": "launch",
+            "mainClass": "Q24725",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q2750",
+            "request": "launch",
+            "mainClass": "Q2750",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q15740",
+            "request": "launch",
+            "mainClass": "Q15740",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q1620",
+            "request": "launch",
+            "mainClass": "Q1620",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch test",
+            "request": "launch",
+            "mainClass": "test",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q16394",
+            "request": "launch",
+            "mainClass": "Q16394",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q10162",
+            "request": "launch",
+            "mainClass": "Q10162",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q24723",
+            "request": "launch",
+            "mainClass": "Q24723",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q1032",
+            "request": "launch",
+            "mainClass": "Q1032",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q1076",
+            "request": "launch",
+            "mainClass": "Q1076",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q1072",
+            "request": "launch",
+            "mainClass": "Q1072",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q1920",
+            "request": "launch",
+            "mainClass": "Q1920",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q1874",
+            "request": "launch",
+            "mainClass": "Q1874",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q2309",
+            "request": "launch",
+            "mainClass": "Q2309",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q1005",
+            "request": "launch",
+            "mainClass": "Q1005",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q1157",
+            "request": "launch",
+            "mainClass": "Q1157",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q1107",
+            "request": "launch",
+            "mainClass": "Q1107",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q11053",
+            "request": "launch",
+            "mainClass": "Q11053",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q5622",
+            "request": "launch",
+            "mainClass": "Q5622",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q9012",
+            "request": "launch",
+            "mainClass": "Q9012",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q2775",
+            "request": "launch",
+            "mainClass": "Q2775",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q10250",
+            "request": "launch",
+            "mainClass": "Q10250",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q11022",
+            "request": "launch",
+            "mainClass": "Q11022",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q1050",
+            "request": "launch",
+            "mainClass": "Q1050",
+            "projectName": "beakjoon_abbb236e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q1239",
+            "request": "launch",
+            "mainClass": "Q1239",
+            "projectName": "beakjoon_82a17da3"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q22362",
+            "request": "launch",
+            "mainClass": "Q22362",
+            "projectName": "beakjoon_82a17da3"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q1463",
+            "request": "launch",
+            "mainClass": "Q1463",
+            "projectName": "beakjoon_82a17da3"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q5525",
+            "request": "launch",
+            "mainClass": "Q5525",
+            "projectName": "beakjoon_82a17da3"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q6086",
+            "request": "launch",
+            "mainClass": "Q6086",
+            "projectName": "beakjoon_82a17da3"
+        },
+        {
+            "type": "java",
+            "name": "Launch test",
+            "request": "launch",
+            "mainClass": "test",
+            "projectName": "beakjoon_82a17da3"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q10989",
+            "request": "launch",
+            "mainClass": "Q10989",
+            "projectName": "beakjoon_82a17da3"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q15829",
+            "request": "launch",
+            "mainClass": "Q15829",
+            "projectName": "beakjoon_82a17da3"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q2869",
+            "request": "launch",
+            "mainClass": "Q2869",
+            "projectName": "beakjoon_82a17da3"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q1018",
+            "request": "launch",
+            "mainClass": "Q1018",
+            "projectName": "beakjoon_82a17da3"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q2609",
+            "request": "launch",
+            "mainClass": "Q2609",
+            "projectName": "beakjoon_82a17da3"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q11050",
+            "request": "launch",
+            "mainClass": "Q11050",
+            "projectName": "beakjoon_82a17da3"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q1259",
+            "request": "launch",
+            "mainClass": "Q1259",
+            "projectName": "beakjoon_82a17da3"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q10250",
+            "request": "launch",
+            "mainClass": "Q10250",
+            "projectName": "beakjoon_82a17da3"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q4153",
+            "request": "launch",
+            "mainClass": "Q4153",
+            "projectName": "beakjoon_82a17da3"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q2920",
+            "request": "launch",
+            "mainClass": "Q2920",
+            "projectName": "beakjoon_82a17da3"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q2475",
+            "request": "launch",
+            "mainClass": "Q2475",
+            "projectName": "beakjoon_82a17da3"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q1152",
+            "request": "launch",
+            "mainClass": "Q1152",
+            "projectName": "beakjoon_82a17da3"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q2504",
+            "request": "launch",
+            "mainClass": "Q2504",
+            "projectName": "beakjoon_82a17da3"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q2108",
+            "request": "launch",
+            "mainClass": "Q2108",
+            "projectName": "beakjoon_82a17da3"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q15997",
+            "request": "launch",
+            "mainClass": "Q15997",
+            "projectName": "beakjoon_82a17da3"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q1092_Fail_list",
+            "request": "launch",
+            "mainClass": "Q1092_Fail_list",
+            "projectName": "beakjoon_82a17da3"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q1092",
+            "request": "launch",
+            "mainClass": "Q1092",
+            "projectName": "beakjoon_82a17da3"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q1241_ver2",
+            "request": "launch",
+            "mainClass": "Q1241_ver2",
+            "projectName": "beakjoon_82a17da3"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q1241",
+            "request": "launch",
+            "mainClass": "Q1241",
+            "projectName": "beakjoon_82a17da3"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q1089",
+            "request": "launch",
+            "mainClass": "Q1089",
+            "projectName": "beakjoon_82a17da3"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q1085",
+            "request": "launch",
+            "mainClass": "Q1085",
+            "projectName": "beakjoon_82a17da3"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q1181",
+            "request": "launch",
+            "mainClass": "Q1181",
+            "projectName": "beakjoon_82a17da3"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q2480",
+            "request": "launch",
+            "mainClass": "Q2480",
+            "projectName": "beakjoon_82a17da3"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q2525",
+            "request": "launch",
+            "mainClass": "Q2525",
+            "projectName": "beakjoon_82a17da3"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q1003",
+            "request": "launch",
+            "mainClass": "Q1003",
+            "projectName": "beakjoon_82a17da3"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q1157",
+            "request": "launch",
+            "mainClass": "Q1157",
+            "projectName": "beakjoon_82a17da3"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q1110",
+            "request": "launch",
+            "mainClass": "Q1110",
+            "projectName": "beakjoon_82a17da3"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q10951",
+            "request": "launch",
+            "mainClass": "Q10951",
+            "projectName": "beakjoon_82a17da3"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q1546",
+            "request": "launch",
+            "mainClass": "Q1546",
+            "projectName": "beakjoon_82a17da3"
+        },
+        {
+            "name": "Launch Package",
+            "type": "go",
+            "request": "launch",
+            "mode": "auto",
+            "program": "${fileDirname}"
+        }
+    ]
+}
