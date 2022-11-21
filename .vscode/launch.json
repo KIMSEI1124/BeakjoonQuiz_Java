@@ -6,6 +6,48 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Q2441",
+            "request": "launch",
+            "mainClass": "Q2441",
+            "projectName": "Algorithm_105d13ce"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
+            "mainClass": "Main",
+            "projectName": "Algorithm_105d13ce"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q2580",
+            "request": "launch",
+            "mainClass": "Q2580",
+            "projectName": "Algorithm_105d13ce"
+        },
+        {
+            "type": "java",
+            "name": "Launch tset",
+            "request": "launch",
+            "mainClass": "tset",
+            "projectName": "Algorithm_105d13ce"
+        },
+        {
+            "type": "java",
+            "name": "Launch test",
+            "request": "launch",
+            "mainClass": "test",
+            "projectName": "Algorithm_105d13ce"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q2108",
+            "request": "launch",
+            "mainClass": "Q2108",
+            "projectName": "Algorithm_105d13ce"
+        },
+        {
+            "type": "java",
             "name": "Launch Q25305",
             "request": "launch",
             "mainClass": "Q25305",
