@@ -12,7 +12,7 @@ public class Q10815 {
         Set<Integer> setN = Arrays.stream(br.readLine().split(" ")).mapToInt(Integer::parseInt).boxed()
                 .collect(Collectors.toSet());
         int M = Integer.parseInt(br.readLine());
-        
+
         st = new StringTokenizer(br.readLine());
         while (st.hasMoreTokens()) {
             int number = Integer.parseInt(st.nextToken());
@@ -23,6 +23,12 @@ public class Q10815 {
             answer.append("0 ");
         }
 
+        warmException(N, M);
+
         System.out.println(answer);
+    }
+
+    private static void warmException(int N, int M) {
+        return;
     }
 }
