@@ -8,6 +8,8 @@ public class Q5430 {
 
     private static final char REMOVE = 'D';
     private static final char REVERSE = 'R';
+    private static final char FRONT = 'F';
+    private static final char BACK = 'B';
 
     public static void main(String[] args) throws IOException {
         int T = Integer.parseInt(br.readLine());
@@ -15,27 +17,34 @@ public class Q5430 {
         for (int i = 0; i < T; i++) {
             char[] p = br.readLine().toCharArray();
             int n = Integer.parseInt(br.readLine());
-            List<Integer> x = getX(n);
-            Deque<Integer> deque = new ArrayDeque<>(getX(n));
-            deque.stream().map(String::valueOf).collect(Collectors.joining(",","[","]"));
+            Deque<Integer> x = new ArrayDeque<>(getX(n));
+            char pointer = FRONT;
 
             try {
                 for (char fun : p) {
                     if (fun == REMOVE) {
-                        x = D(x);
-                        continue;
+                        x = D(x, pointer);
                     }
                     if (fun == REVERSE) {
-                        x = R(x);
+                        pointer = R(pointer);
                     }
                 }
-                answer.append(x.stream()
-                        .map(String::valueOf)
-                        .collect(Collectors.joining(",", "[", "]")));
+                if (pointer == BACK) {
+                    List<Integer> list = new ArrayList<>(x);
+                    Collections.reverse(list);
+                    answer.append(
+                            list.stream()
+                                    .map(String::valueOf)
+                                    .collect(Collectors.joining(",", "[", "]")));
+                }
+                if (pointer == FRONT) {
+                    answer.append(x.stream()
+                            .map(String::valueOf)
+                            .collect(Collectors.joining(",", "[", "]")));
+                }
             } catch (Exception e) {
                 answer.append("error");
             }
-
             answer.append("\n");
         }
         System.out.println(answer);
@@ -54,13 +63,26 @@ public class Q5430 {
         return list;
     }
 
-    private static List<Integer> D(List<Integer> x) {
-        x.remove(0);
+    private static Deque<Integer> D(Deque<Integer> x, char pointer) {
+        if(x.isEmpty()) {
+            throw new NullPointerException();
+        }
+        if (pointer == FRONT) {
+            x.pollFirst();
+        }
+        if (pointer == BACK) {
+            x.pollLast();
+        }
         return x;
     }
 
-    private static List<Integer> R(List<Integer> x) {
-        Collections.reverse(x);
-        return x;
+    private static char R(char pointer) {
+        if (pointer == FRONT) {
+            return BACK;
+        }
+        if (pointer == BACK) {
+            return FRONT;
+        }
+        return pointer;
     }
 }
