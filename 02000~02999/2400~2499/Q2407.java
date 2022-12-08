@@ -7,24 +7,17 @@ public class Q2407 {
     static StringTokenizer st;
 
     public static void main(String[] args) throws IOException {
-        // input
         st = new StringTokenizer(br.readLine());
         int N = Integer.parseInt(st.nextToken());
         int M = Integer.parseInt(st.nextToken());
         BigInteger ans = new BigInteger("1");
 
-        // solve
-        BigInteger new_BI;
-        for (int i = N; i > 0; i--) {
-            new_BI = new BigInteger(String.valueOf(i));
-            if (i > N - M) {
-                ans = ans.multiply(new_BI);
-            } else if (M >= i) {
-                ans = ans.divide(new_BI);
-            }
+        for (int i = 0; M > i; i++) {
+            ans = ans
+                    .multiply(new BigInteger(String.valueOf(N - i)))
+                    .divide(new BigInteger(String.valueOf(i + 1)));
         }
 
-        // output
         System.out.println(ans);
     }
 }
