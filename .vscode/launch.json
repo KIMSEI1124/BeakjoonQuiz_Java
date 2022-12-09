@@ -6,6 +6,41 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Q3078",
+            "request": "launch",
+            "mainClass": "Q3078",
+            "projectName": "Algorithm_105d13ce"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q1149",
+            "request": "launch",
+            "mainClass": "Q1149",
+            "projectName": "Algorithm_105d13ce"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q1092",
+            "request": "launch",
+            "mainClass": "Q1092",
+            "projectName": "Algorithm_105d13ce"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q1000",
+            "request": "launch",
+            "mainClass": "Q1000",
+            "projectName": "Algorithm_105d13ce"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
+            "mainClass": "Baekjoon.Main",
+            "projectName": "Algorithm_105d13ce"
+        },
+        {
+            "type": "java",
             "name": "Launch Q2407",
             "request": "launch",
             "mainClass": "Q2407",
