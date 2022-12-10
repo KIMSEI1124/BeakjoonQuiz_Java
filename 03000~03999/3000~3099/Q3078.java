@@ -6,7 +6,7 @@ public class Q3078 {
     private static StringTokenizer st;
 
     public static void main(String[] args) throws IOException {
-        Long answer = 0L;
+        Long answer = 0L;   // Long으로 변경후 통과함
 
         st = new StringTokenizer(br.readLine());
         int N = Integer.parseInt(st.nextToken());
