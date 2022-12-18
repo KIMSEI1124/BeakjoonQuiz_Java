@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch teset",
+            "request": "launch",
+            "mainClass": "teset",
+            "projectName": "Algorithm_105d13ce"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q10162",
+            "request": "launch",
+            "mainClass": "Q10162",
+            "projectName": "Algorithm_105d13ce"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q10026",
+            "request": "launch",
+            "mainClass": "Q10026",
+            "projectName": "Algorithm_105d13ce"
+        },
+        {
+            "type": "java",
             "name": "Launch Q3040",
             "request": "launch",
             "mainClass": "Q3040",
