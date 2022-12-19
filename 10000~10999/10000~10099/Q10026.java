@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class Q10026 {
+public class Q10026 { // 최적화 해보기
     private static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     private static StringBuilder answer = new StringBuilder();
 
@@ -33,18 +33,15 @@ public class Q10026 {
                     count++;
                     Deque<List<Integer>> pos = new ArrayDeque<>();
                     pos.add(List.of(i, j));
+                    visited[i][j] = true;
                     while (!pos.isEmpty()) {
                         int y = pos.peek().get(0);
                         int x = pos.poll().get(1);
                         char color = grid[y][x];
-                        visited[y][x] = true;
                         for (int k = 0; k < 4; k++) {
                             int newY = y + dy[k];
                             int newX = x + dx[k];
-                            if (0 > newY || newY >= size) {
-                                continue;
-                            }
-                            if (0 > newX || newX >= size) {
+                            if (canContinue(size, newX, newY)) {
                                 continue;
                             }
                             if (visited[newY][newX]) {
@@ -72,6 +69,7 @@ public class Q10026 {
                     count++;
                     Deque<List<Integer>> pos = new ArrayDeque<>();
                     pos.add(List.of(i, j));
+                    visited[i][j] = true;
                     while (!pos.isEmpty()) {
                         int y = pos.peek().get(0);
                         int x = pos.poll().get(1);
@@ -79,14 +77,10 @@ public class Q10026 {
                         if (color == 'G') {
                             color = 'R';
                         }
-                        visited[y][x] = true;
                         for (int k = 0; k < 4; k++) {
-                            int newY = y + dy[k];
                             int newX = x + dx[k];
-                            if (0 > newY || newY >= size) {
-                                continue;
-                            }
-                            if (0 > newX || newX >= size) {
+                            int newY = y + dy[k];
+                            if (canContinue(size, newX, newY)) {
                                 continue;
                             }
                             if (visited[newY][newX]) {
@@ -106,5 +100,15 @@ public class Q10026 {
             }
         }
         return count;
+    }
+
+    private static boolean canContinue(int size, int X, int Y) {
+        if (0 > X || X >= size) {
+            return true;
+        }
+        if (0 > Y || Y >= size) {
+            return true;
+        }
+        return false;
     }
 }
