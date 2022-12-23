@@ -1,32 +1,42 @@
 import java.io.*;
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Q11053 {
-    public static void main(String[] args) throws NumberFormatException, IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    private static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    private static Map<Integer, Integer> dp = new HashMap<>();
+
+    public static void main(String[] args) throws IOException {
         int N = Integer.parseInt(br.readLine());
-        StringTokenizer st = new StringTokenizer(br.readLine());
-        ArrayList<Integer> check = new ArrayList<>();   // 중복값 확인하기 위한 리스트
-        int[] arr = new int[N];
-        int maxCount = 0;
+        List<Integer> list = Arrays.stream(br.readLine().split(" "))
+                .mapToInt(Integer::parseInt).boxed()
+                .collect(Collectors.toList());
         for (int i = 0; i < N; i++) {
-            arr[i] = Integer.parseInt(st.nextToken());
+            dp.put(list.get(i), getCount(copyListOf(list, i)) + 1);
+            System.out.println(dp);
         }
-        for (int i = 0; i < arr.length; i++) {
-            int num = arr[i];
-            int count = 1;
-            if (check.contains(arr[i])) {
-                continue;
-            } else {
-                check.add(arr[i]);
-                for (int j = i + 1; j < arr.length; j++) {
-                    if (Math.max(num, arr[j]) == arr[j]) {
-                        count++;
-                    }
-                }
-                maxCount = Math.max(maxCount, count);
+    }
+
+    private static int getCount(List<Integer> list) {
+        for (int i = list.size() - 1; i >= 0; i--) {
+            int number = list.get(i);
+            if (list.get(list.size() - 1) > number) {
+                System.out.println(dp.get(number));
+                return dp.get(number);
             }
         }
-        System.out.println(maxCount);
+        return 0;
+    }
+
+    private static List<Integer> copyListOf(List<Integer> list, int endIndex) {
+        List<Integer> copyList = new ArrayList<>();
+        int target = list.get(endIndex);
+        for (int i = 0; i <= endIndex; i++) {
+            int number = list.get(i);
+            if (target > number) {
+                copyList.add(list.get(i));
+            }
+        }
+        return copyList;
     }
 }
