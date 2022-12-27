@@ -6,6 +6,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Q1037",
+            "request": "launch",
+            "mainClass": "Q1037",
+            "projectName": "Algorithm_105d13ce"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q3107",
+            "request": "launch",
+            "mainClass": "Q3107",
+            "projectName": "Algorithm_105d13ce"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q11758",
+            "request": "launch",
+            "mainClass": "Q11758",
+            "projectName": "Algorithm_105d13ce"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q7662",
+            "request": "launch",
+            "mainClass": "Q7662",
+            "projectName": "Algorithm_105d13ce"
+        },
+        {
+            "type": "java",
             "name": "Launch Q11053",
             "request": "launch",
             "mainClass": "Q11053",
