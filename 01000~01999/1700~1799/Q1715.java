@@ -1,28 +1,45 @@
 import java.io.*;
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Q1715 {
-    static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-    static int ans = 0;
-    static StringTokenizer st;
-    static int N;
+    private static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
     public static void main(String[] args) throws IOException {
-        // input
-        N = Integer.parseInt(br.readLine());
-        PriorityQueue<Integer> pq = new PriorityQueue<>();
-        while (N > 0) {
-            pq.add(Integer.parseInt(br.readLine()));
-            N--;
-        }
+        int N = Integer.parseInt(br.readLine());
+        List<Long> cards = new ArrayList<>(getList(N));
+        System.out.println(getResult(cards));
+    }
 
-        // solve
-        while (pq.size() != 1) {
-            pq.add(pq.poll() + pq.poll());
-            ans += pq.peek();
-            System.out.println(ans);
+    private static List<Long> getList(int size) throws IOException {
+        List<Long> list = new ArrayList<>();
+        while (size-- > 0) {
+            list.add(Long.parseLong(br.readLine()));
         }
+        return list.stream().sorted().collect(Collectors.toList());
+    }
 
-        // output
+    private static long getResult(List<Long> list) {
+        long total = 0L;
+        while (list.size() != 1) {
+            System.out.println(list);
+            long sum = list.get(0) + list.get(1);
+            list.remove(1);
+            list.remove(0);
+            total += sum;
+            for (int i = 0; i < list.size(); i++) {
+                if (list.get(i) >= sum) {
+                    list.add(i, sum);
+                    break;
+                }
+            }
+        }
+        return total;
     }
 }
+
+// 10 + 20 = 30 {30, 30, 40, 50}
+// 30 + 30 = 60 {40, 50, 60}
+// 40 + 50 = 90 {60, 90}
+// 60 + 90 = 150 {150}
+// 30 + 60 + 90 + 150 = 330
