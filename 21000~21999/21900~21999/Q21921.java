@@ -9,12 +9,12 @@ public class Q21921 {
         st = new StringTokenizer(br.readLine());
         int N = Integer.parseInt(st.nextToken());
         int X = Integer.parseInt(st.nextToken());
-        int[] array = getArray(N);
+        List<Integer> list = getList(N);
 
         long max = 0L;
         int count = 0;
-        for (int i = X; i < array.length; i++) {
-            int temp = array[i] - array[i - X];
+        for (int i = X; i < list.size(); i++) {
+            int temp = list.get(i) - list.get(i - X);
             if (temp > max) {
                 max = temp;
                 count = 1;
@@ -30,17 +30,12 @@ public class Q21921 {
         System.out.println(max + "\n" + count);
     }
 
-    private static int[] getArray(int N) throws IOException {
-        int[] array = new int[N];
+    private static List<Integer> getList(int N) throws IOException {
+        List<Integer> list = new ArrayList<>(List.of(0));
         st = new StringTokenizer(br.readLine());
-        for (int i = 0; i < array.length; i++) {
-            int number = Integer.parseInt(st.nextToken());
-            if (i == 0) {
-                array[i] = number;
-                continue;
-            }
-            array[i] = array[i - 1] + number;
+        for (int i = 1; i <= N; i++) {
+            list.add(Integer.parseInt(st.nextToken()) + list.get(i - 1));
         }
-        return array;
+        return list;
     }
 }
