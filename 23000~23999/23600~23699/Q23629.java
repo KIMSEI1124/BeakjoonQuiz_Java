@@ -19,7 +19,7 @@ public class Q23629 {
         for (int i = 0; i < str_arr.length; i++) { // 문자 -> 숫자 변환
             S = S.replaceAll(str_arr[i], String.valueOf(int_arr[i]));
         }
-
+        
         // solve
         st = new StringTokenizer(S, "+-x/=", true); // 숫자와 연산자 분리
 
