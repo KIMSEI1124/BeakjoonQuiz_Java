@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Q9093",
+            "request": "launch",
+            "mainClass": "Q9093",
+            "projectName": "Algorithm_105d13ce"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q27065",
+            "request": "launch",
+            "mainClass": "Q27065",
+            "projectName": "Algorithm_105d13ce"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q20922",
+            "request": "launch",
+            "mainClass": "Q20922",
+            "projectName": "Algorithm_105d13ce"
+        },
+        {
+            "type": "java",
             "name": "Launch Q11728",
             "request": "launch",
             "mainClass": "Q11728",
