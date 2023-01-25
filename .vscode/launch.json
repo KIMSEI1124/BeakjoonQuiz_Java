@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Q2752",
+            "request": "launch",
+            "mainClass": "Q2752",
+            "projectName": "Beakjoon_Java_e4de4e0f"
+        },
+        {
+            "type": "java",
             "name": "Launch Q11650",
             "request": "launch",
             "mainClass": "Q11650",
