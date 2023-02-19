@@ -33,3 +33,11 @@ public class Q1236 {
         return answer;
     }
 }
+
+/*
+OOOOXXXX
+OO.OOOOO
+XXOXOXXO
+OO.OOOOO
+OO.OOOOO
+ */
