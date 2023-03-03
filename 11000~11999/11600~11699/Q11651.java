@@ -21,31 +21,31 @@ public class Q11651 {
         Comparator<Point<Integer, Integer>> comparatorX = (a, b) -> a.getX() - b.getX();
         list.sort(comparatorX);
         list.sort(comparatorY);
-        for (Point<Integer,Integer> point : list) {
+        for (Point<Integer, Integer> point : list) {
             answer.append(point.getPoint()).append("\n");
         }
         System.out.println(answer);
     }
-}
 
-class Point<X, Y> {
-    private int x;
-    private int y;
+    private static class Point<X, Y> {
+        private int x;
+        private int y;
 
-    public void setPoint(int x, int y) {
-        this.x = x;
-        this.y = y;
-    }
+        public void setPoint(int x, int y) {
+            this.x = x;
+            this.y = y;
+        }
 
-    public int getX() {
-        return this.x;
-    }
+        public int getX() {
+            return this.x;
+        }
 
-    public int getY() {
-        return this.y;
-    }
+        public int getY() {
+            return this.y;
+        }
 
-    public String getPoint() {
-        return this.x + " " + this.y;
+        public String getPoint() {
+            return this.x + " " + this.y;
+        }
     }
 }
