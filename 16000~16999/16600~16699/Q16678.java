@@ -7,7 +7,7 @@ public class Q16678 {
     public static void main(String[] args) throws IOException {
         int N = Integer.parseInt(br.readLine());
         List<Integer> list = getList(N);
-        System.out.println(list);
+        System.out.println(getResult(list));
     }
 
     private static List<Integer> getList(int N) throws IOException {
@@ -19,17 +19,31 @@ public class Q16678 {
         return list;
     }
 
-    private static int getResult(List<Integer> list, int N) {
+    private static int getResult(List<Integer> list) {
         int result = 0;
         int start = 0;
         int end = list.size() - 1;
         int index = 1;
-        while (N > index++) {
-            list.get(start);
+        while (end > start) {
+            System.out.println(list);
             if (list.get(start) <= index) {
                 start++;
                 continue;
             }
+            if (index < list.get(start)) {
+                if (list.get(start) - 1 == index && start != 0) {
+                    index++;
+                } else {
+                    result += list.get(end) - index;
+                    list.add(start, index);
+                    index++;
+                    list.remove(list.size() - 1);
+                }
+                start++;
+                continue;
+            }
+            start++;
+            index++;
         }
         return result;
     }

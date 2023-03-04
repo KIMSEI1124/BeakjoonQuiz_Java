@@ -8,21 +8,35 @@ public class Q10814 {
 
     public static void main(String[] args) throws IOException {
         int N = Integer.parseInt(br.readLine());
-        Map<String, Integer> map = new HashMap<>();
-        while (N-- > 0) {
+        List<User<String, Integer>> users = new ArrayList<>();
+        for (int i = 0; i < N; i++) {
             st = new StringTokenizer(br.readLine());
-            int value = Integer.parseInt(st.nextToken());
-            String key = st.nextToken();
-            map.put(key, value);
+            int age = Integer.parseInt(st.nextToken());
+            String name = st.nextToken();
+            users.add(new User<>(name, age));
         }
-        // List<String> keyList = new ArrayList<>(map.keySet());
-        // keyList.sort((a, b) -> a.compareTo(b));
-        List<Integer> valueList = new ArrayList<>(map.values());
-        valueList.sort((a, b) -> a.compareTo(b));
-        for (String name : map.keySet()) {
-            int age = map.get(name);
-            answer.append(age).append(" ").append(name).append("\n");
+        Collections.sort(users, (a, b) -> a.getAge() - b.getAge());
+        for (User<String, Integer> user : users) {
+            answer.append(user.age).append(" ").append(user.name).append("\n");
         }
         System.out.println(answer);
+    }
+
+    private static class User<N, A> {
+        private N name;
+        private A age;
+
+        public User(N name, A age) {
+            this.name = name;
+            this.age = age;
+        }
+
+        public N getName() {
+            return name;
+        }
+
+        public A getAge() {
+            return age;
+        }
     }
 }
