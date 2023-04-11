@@ -6,6 +6,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "SimpleArraySum",
+            "request": "launch",
+            "mainClass": "SimpleArraySum",
+            "projectName": "Algo_fa8cfb94"
+        },
+        {
+            "type": "java",
+            "name": "Q1159",
+            "request": "launch",
+            "mainClass": "Q1159",
+            "projectName": "Algo_fa8cfb94"
+        },
+        {
+            "type": "java",
+            "name": "Q1000",
+            "request": "launch",
+            "mainClass": "Q1000",
+            "projectName": "Algo_fa8cfb94"
+        },
+        {
+            "type": "java",
+            "name": "Q3003",
+            "request": "launch",
+            "mainClass": "Q3003",
+            "projectName": "Algo_fa8cfb94"
+        },
+        {
+            "type": "java",
             "name": "Q16678",
             "request": "launch",
             "mainClass": "Q16678",
