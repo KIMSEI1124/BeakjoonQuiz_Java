@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Q10775",
+            "request": "launch",
+            "mainClass": "Q10775",
+            "projectName": "Algo_fa8cfb94"
+        },
+        {
+            "type": "java",
+            "name": "Q2573",
+            "request": "launch",
+            "mainClass": "Q2573",
+            "projectName": "Algo_fa8cfb94"
+        },
+        {
+            "type": "java",
             "name": "SimpleArraySum",
             "request": "launch",
             "mainClass": "SimpleArraySum",

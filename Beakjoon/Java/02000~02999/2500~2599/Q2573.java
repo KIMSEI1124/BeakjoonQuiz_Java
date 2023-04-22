@@ -2,105 +2,74 @@ import java.io.*;
 import java.util.*;
 
 public class Q2573 {
-    static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-    static StringTokenizer st;
-    static StringBuilder ans = new StringBuilder();
-    static int N, M;
-    static int[][] iceberg;
-    static boolean[][] vistied;
+    private static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    private static int answer = 0;
+    private static StringTokenizer st;
+    private static int[][] area;
+    private static boolean[][] visited;
 
     public static void main(String[] args) throws IOException {
-        // input
         st = new StringTokenizer(br.readLine());
-        N = Integer.parseInt(st.nextToken());
-        M = Integer.parseInt(st.nextToken());
-        iceberg = new int[N][M];
+        int N = Integer.parseInt(st.nextToken());
+        int M = Integer.parseInt(st.nextToken());
+
+        area = new int[N][M];
 
         for (int i = 0; i < N; i++) {
-            st = new StringTokenizer(br.readLine());
-            for (int j = 0; j < M; j++) {
-                iceberg[i][j] = Integer.parseInt(st.nextToken());
-            }
+            area[i] = Arrays.stream(br.readLine().split(" "))
+                    .mapToInt(Integer::parseInt)
+                    .toArray();
         }
-        // solve
-        boolean run = true;
-        int year = 0, count;
-        while (run) {
-            count = 0;
-            vistied = new boolean[N][M];
-            
-            for (int i = 0; i < N; i++) {
-                for (int j = 0; j < M; j++) {
-                    if (iceberg[i][j] != 0) {
-                        if(count != 0) {
-                            ans.append(year);
-                            run = false;
-                        } else {
-                            count++;
-                            dfs(i, j);
+
+        while (true) {
+            visited = new boolean[N][M];
+            printArray();
+            if (melt(N, M)) {
+                answer++;
+                continue;
+            }
+            break;
+        }
+
+        System.out.println(answer);
+    }
+
+    private static void printArray() {
+        System.out.println("day : " + answer);
+        for (int i = 0; i < area.length; i++) {
+            System.out.println(Arrays.toString(area[i]));
+        }
+    }
+
+    private static int[] dx = { -1, 0, 0, 1 };
+    private static int[] dy = { 0, -1, 1, 0 };
+
+    private static boolean melt(int N, int M) {
+        boolean isMelt = false;
+        for (int i = 0; i < N; i++) { // y
+            for (int j = 0; j < M; j++) { // x
+                if (area[i][j] != 0) {
+                    for (int k = 0; k < 4; k++) {
+                        int y = i + dy[k];
+                        if (y < 0 || N <= y) {
+                            continue;
+                        }
+                        int x = j + dx[k];
+                        if (x < 0 || M <= x) {
+                            continue;
+                        }
+                        if (visited[y][x]) {
+                            continue;
+                        }
+                        if (area[y][x] == 0 && area[i][j] != 0) {
+                            area[i][j] -= 1;
+                            visited[i][j] = true;
+                            isMelt = true;
                         }
                     }
                 }
             }
-            if(count == 0) {
-                ans.append("0");
-                run = false;
-            }
-            for (int i = 0; i < N; i++) {
-                System.out.println(Arrays.toString(iceberg[i]));
-            }
-            year++;
         }
-
-        // output
-        System.out.println(ans);
-    }
-
-    static int[] dy = { -1, 0, 0, 1 };
-    static int[] dx = { 0, -1, 1, 0 };
-
-    public static void dfs(int y, int x) {
-        if (vistied[y][x]) {
-            return;
-        }
-        vistied[y][x] = true;
-        melt(y, x);
-        int new_y, new_x;
-        for (int i = 0; i < 4; i++) {
-            new_y = y + dy[i];
-            if (new_y < 0 || new_y >= N) {
-                continue;
-            }
-            new_x = x + dx[i];
-            if (new_x < 0 || new_y >= M) {
-                continue;
-            }
-            if (iceberg[new_y][new_x] != 0) {
-                dfs(new_y, new_x);
-            }
-        }
-    }
-
-    public static void melt(int y, int x) {
-        int heigth = iceberg[y][x];
-        int new_y, new_x;
-        for (int i = 0; i < 4; i++) {
-            if (heigth == 0) {
-                iceberg[y][x] = 0;
-                return;
-            }
-            new_y = y + dy[i];
-            if (new_y < 0 || new_y >= N) {
-                continue;
-            }
-            new_x = x + dx[i];
-            if (new_x < 0 || new_y >= M) {
-                continue;
-            }
-            if (iceberg[new_y][new_x] == 0) {
-                heigth--;
-            }
-        }
-        iceberg[y][x] = heigth;
+        return isMelt;
     }
 }
