@@ -1,67 +1,41 @@
 import java.io.*;
 import java.util.*;
 
-// 이분탐색
-
 public class Q1620 {
-    public static void main(String[] args) throws NumberFormatException, IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringBuilder sb = new StringBuilder();
-        StringTokenizer st = new StringTokenizer(br.readLine());
-        int N = Integer.parseInt(st.nextToken());
-        int M = Integer.parseInt(st.nextToken());
-        HashMap<Integer, String> poekmon = new HashMap<>();
+    private static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    private static StringBuilder answer = new StringBuilder();
+    private static StringTokenizer st;
+
+    private static int N;
+    private static int T;
+
+    public static void main(String[] args) throws IOException {
+        st = new StringTokenizer(br.readLine());
+
+        N = Integer.parseInt(st.nextToken());
+        T = Integer.parseInt(st.nextToken());
+
+        Map<Integer, String> numberMap = new HashMap<>();
+        Map<String, Integer> nameMap = new HashMap<>();
+        String input;
         for (int i = 1; i <= N; i++) {
-            poekmon.put(i, br.readLine());
+            input = br.readLine();
+            numberMap.put(i, input);
+            nameMap.put(input, i);
         }
-        for (int i = 1; i <= N; i++) {
-            poekmon.put(i, br.readLine());
-        }
-        while (M > 0) {
-            String str = br.readLine();
-            int strInt;
-            try { // 성공시 도감번호로 이름 검색
-                strInt = Integer.parseInt(str);
-                sb.append(poekmon.get(strInt)).append("\n");
-            } catch (Exception e) { // 실패시 이름으로 도감 번호 검색
-                for (int i = 1; i <= poekmon.size(); i++) {
-                    if (poekmon.get(i).equals(str)) {
-                        sb.append(i).append("\n");
-                        break;
-                    }
-                }
+
+        while (T-- > 0) {
+            input = br.readLine();
+            if (Character.isDigit(input.charAt(0))) {
+                /* 도감 번호로 주어질 경우 */
+                answer.append(numberMap.get(Integer.parseInt(input)));
+            } else {
+                /* 이름으로 주어질 경우 */
+                answer.append(nameMap.get(input));
             }
-            M--;
+            answer.append("\n");
         }
-        System.out.println(sb);
-    }
 
-    public static void bs() {
-
-    }
-}
-
-class pokemon<C, T> {
-    private C startAlphabat;    // char
-    private T pokemonBook;      // TreeMap<Integer, String>
-
-    public void setSA(C startAlphabat) {
-        this.startAlphabat = startAlphabat;
-    }
-
-    public void setPB(T pokemonBook) {
-        this.pokemonBook = pokemonBook;
-    }
-
-    public void addPB(T pokemnBook) {
-
-    }
-
-    public C getSA() {
-        return this.startAlphabat;
-    }
-
-    public T getPB() {
-        return this.pokemonBook;
+        System.out.println(answer);
     }
 }
