@@ -7,7 +7,6 @@ public class Q2309_re {
 
     private static List<Integer> answerList = new ArrayList<>();
     private final static int ONE_HUNDRED = 100;
-    private static boolean end = false;
 
     public static void main(String[] args) throws IOException {
         List<Integer> list = getList(9);
@@ -25,14 +24,10 @@ public class Q2309_re {
     }
 
     private static void get(int start, List<Integer> list) {
-        if (end) {
-            return;
-        }
-
         int sum = answerList.stream().mapToInt(i -> i).sum();
         if (answerList.size() == 7 && sum == ONE_HUNDRED) {
             print();
-            end = true;
+            System.exit(0);
             return;
         }
 
