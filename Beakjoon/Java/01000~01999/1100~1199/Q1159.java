@@ -25,7 +25,6 @@ public class Q1159 {
         });
         if (list.size() > 0) {
             list.stream().sorted().forEach(t -> answer.append(t));
-            ;
         }
         if (list.size() == 0) {
             answer.append("PREDAJA");
