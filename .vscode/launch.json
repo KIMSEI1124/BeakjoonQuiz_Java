@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Q9375",
+            "request": "launch",
+            "mainClass": "Q9375",
+            "projectName": "Algo_fa8cfb94"
+        },
+        {
+            "type": "java",
             "name": "Q3986",
             "request": "launch",
             "mainClass": "Q3986",
