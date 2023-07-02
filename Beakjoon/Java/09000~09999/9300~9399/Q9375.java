@@ -19,31 +19,40 @@ public class Q9375 {
                 continue;
             }
 
-            int count = 1;
-            Map<String, Integer> map = new HashMap<>();
-            List<String> keys = new ArrayList<>();
-            for (int i = 0; i < N; i++) {
-                String[] item = br.readLine().split(" ");
-                if (map.containsKey(item[1])) {
-                    map.put(item[1], map.get(item[1]) + 1);
-                    continue;
-                }
-                map.put(item[1], 1);
-                keys.add(item[1]);
-            }
+            List<Integer> list = getList();
+            int count = getCount(list);
 
-            if (keys.size() == 1) {
-                answer.append(N).append("\n");
-                continue;
-            }
-
-            for (String key : keys) {
-                count *= map.get(key);
-            }
-            count += N;
             answer.append(count).append("\n");
         }
 
         System.out.println(answer);
+    }
+
+    private static List<Integer> getList() throws IOException {
+        Map<String, Integer> map = new HashMap<>();
+
+        for (int i = 0; i < N; i++) {
+            String[] item = br.readLine().split(" ");
+            if (map.containsKey(item[1])) {
+                map.put(item[1], map.get(item[1]) + 1);
+                continue;
+            }
+            map.put(item[1], 1);
+        }
+
+        return new ArrayList<>(map.values());
+    }
+
+    private static int getCount(List<Integer> list) {
+        if (list.size() == 1) {
+            return list.get(0);
+        }
+
+        int count = 1;
+        for (Integer quantity : list) {
+            count *= quantity + 1;
+        }
+
+        return count - 1;
     }
 }
