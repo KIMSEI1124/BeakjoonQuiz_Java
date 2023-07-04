@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Q2420",
+            "request": "launch",
+            "mainClass": "Q2420",
+            "projectName": "Algo_fa8cfb94"
+        },
+        {
+            "type": "java",
             "name": "Q1629",
             "request": "launch",
             "mainClass": "Q1629",
