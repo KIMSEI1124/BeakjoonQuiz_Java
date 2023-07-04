@@ -15,6 +15,7 @@ public class 두_개의_숫자열 {
             int result = getResult();
             answer.append("#").append(testCase).append(" ").append(result).append("\n");
         }
+
         System.out.println(answer);
     }
 
