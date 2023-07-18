@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Q4435",
+            "request": "launch",
+            "mainClass": "Q4435",
+            "projectName": "Algo_fa8cfb94"
+        },
+        {
+            "type": "java",
+            "name": "Q2206",
+            "request": "launch",
+            "mainClass": "Q2206",
+            "projectName": "Algo_fa8cfb94"
+        },
+        {
+            "type": "java",
             "name": "Q10824",
             "request": "launch",
             "mainClass": "Q10824",
