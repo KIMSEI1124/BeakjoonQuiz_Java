@@ -1,6 +1,7 @@
 {
     "java.project.sourcePaths": [
         "HackerRank/Java/Easy",
+        "Beakjoon/Java/27000~27999/27800~27899",
         "Beakjoon/Java/27000~27999/27000~27099",
         "Beakjoon/Java/26000~26999/26500~26599",
         "Beakjoon/Java/26000~26999/26400~26499",
@@ -28,6 +29,7 @@
         "Beakjoon/Java/15000~15999/15700~15799",
         "Beakjoon/Java/15000~15999/15600~15699",
         "Beakjoon/Java/15000~15999/15500~15599",
+        "Beakjoon/Java/14000~14999/14800~14899",
         "Beakjoon/Java/14000~14999/14600~14699",
         "Beakjoon/Java/14000~14999/14500~14599",
         "Beakjoon/Java/14000~14999/14400~14499",
