@@ -11,26 +11,22 @@ public class Q1182 {
         int n = Integer.parseInt(st.nextToken());
         int s = Integer.parseInt(st.nextToken());
 
-        int[] array = new int[n + 1];
+        int[] array = new int[n];
         st = new StringTokenizer(br.readLine());
-        for (int i = 1; i <= n; i++) {
-            array[i] = array[i - 1] + Integer.parseInt(st.nextToken());
+        for (int i = 0; i < n; i++) {
+            array[i] = Integer.parseInt(st.nextToken());
         }
 
-        for (int i = 1; i < n; i++) {
-            for (int j = i + 1; j <= n; j++) {
-                int target = array[j] - array[i];
-                if (target == s) {
+        for (int i = 0; i < n; i++) {
+            int sum = 0;
+            for (int j = i; j < n; j++) {
+                sum += array[j];
+                if (sum == s) {
                     answer++;
                 }
             }
         }
 
         System.out.println(answer);
-    }
-
-    public static int func(int[] array, int idx1, int idx2) {
-        int result = 0;
-        return result;
     }
 }
