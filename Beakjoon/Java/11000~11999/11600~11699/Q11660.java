@@ -19,6 +19,10 @@ public class Q11660 {
                 arr[i][j] = arr[i - 1][j] + arr[i][j - 1] + num - arr[i - 1][j - 1];
             }
         }
+
+        for (int i = 1; i <= N; i++) {
+            System.out.println(Arrays.toString(arr[i]));
+        }
         // Solve
         while (M > 0) {
             st = new StringTokenizer(br.readLine());

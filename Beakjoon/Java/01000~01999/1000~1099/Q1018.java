@@ -1,62 +1,52 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.StringTokenizer;
+import java.io.*;
+import java.util.*;
 
 public class Q1018 {
-    // 2 -> 12, 28
-    // 5 -> 0 , 8
-    // 7 -> 15, 30
-    public static void main(String[] args) throws IOException {
-        // 보드판 세팅
-        String[] B = { "B", "W", "B", "W", "B", "W", "B", "W" };
-        String[] W = { "W", "B", "W", "B", "W", "B", "W", "B" };
-        String[][] bBoard = { B, W, B, W, B, W, B, W };
-        String[][] wBoard = { W, B, W, B, W, B, W, B };
+    private static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    private static StringTokenizer st;
+    private static int n, m;
+    private static int[][] grid;
 
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(br.readLine());
-        // N과 M 변수 설정, 입력받은 보드판 세팅
-        int N = Integer.parseInt(st.nextToken());
-        int M = Integer.parseInt(st.nextToken());
-        String[][] board = new String[N][M];
-        for (int i = 0; i < N; i++) {
-            board[i] = br.readLine().split("");
+    public static void main(String[] args) throws IOException {
+        /* Input */
+        st = new StringTokenizer(br.readLine());
+        n = Integer.parseInt(st.nextToken());
+        m = Integer.parseInt(st.nextToken());
+        grid = new int[n][m];
+        for (int i = 0; i < n; i++) {
+            char[] c = br.readLine().toCharArray();
+            for (int j = 0; j < m; j++) {
+                grid[i][j] = inputElement(c[j]);
+            }
+            System.out.println(Arrays.toString(grid[i]));
         }
-        int min = 64; // 최소로 교환해야할 네모칸
-        int bCheck;
-        int wCheck;
-        int xPos = 0, yPos = 0; // 확인용
-        for (int i = 0; i <= N - 8; i++) { // board판 y축
-            for (int j = 0; j <= M - 8; j++) { // board판 x축
-                bCheck = 0;
-                wCheck = 0;
-                for (int y = 0; y < 8; y++) { // board판 비교 y축
-                    if (bCheck > min || wCheck > min) {
-                        break;
-                    }
-                    for (int x = 0; x < 8; x++) { // board판 비교 x축
-                        // System.out.println((y + i) + ", " + (x + j) + ", boardValue : " + board[y +
-                        // i][x + j]
-                        // + ", bBoardValue : " + bBoard[y][x] + ", wBoardValue : " + wBoard[y][x]);
-                        if (!board[y + i][x + j].equals(bBoard[y][x])) {
-                            bCheck += 1;
-                        }
-                        if (!board[y + i][x + j].equals(wBoard[y][x])) {
-                            wCheck += 1;
-                        }
-                        if (y == 7 && x == 7) {
-                            if (min > Math.min(wCheck, bCheck)) {
-                                min = Math.min(wCheck, bCheck);
-                                xPos = i; yPos = j; // 확인용
-                            }
-                        }
-                    }
+
+        /* Solve */
+        int zero = getCount(0);
+        int one = getCount(1);
+        System.out.println(zero);
+        System.out.println(one);
+        int answer = Math.min(zero, one);
+        System.out.println(answer);
+    }
+
+    private static int inputElement(char c) {
+        if (c == 'W') {
+            return 0;
+        }
+        return 1;
+    }
+
+    private static int getCount(int type) {
+        int count = 0;
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                int temp = grid[i][j] ^ type;
+                if (temp != grid[i][j]) {
+                    count++;
                 }
-                System.out.println(j + " " + i + " " + min);
             }
         }
-        System.out.println(min);
-        System.out.println("xPos : " + xPos + ", yPos : " + yPos);
+        return count;
     }
 }
