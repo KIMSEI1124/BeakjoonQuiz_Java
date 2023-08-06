@@ -1,38 +1,50 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.Stack;
+import java.io.*;
+import java.util.*;
 
 public class Q1874 {
-    public static void main(String[] args) throws NumberFormatException, IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringBuilder sb = new StringBuilder();
+    private static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    private static StringBuilder answer = new StringBuilder();
+    private static int n;
+
+    public static void main(String[] args) throws IOException {
+        input();
+        solve();
+        System.out.println(answer);
+    }
+
+    private static void input() throws IOException {
+        n = Integer.parseInt(br.readLine());
+    }
+
+    private static void solve() throws IOException {
         Stack<Integer> stack = new Stack<>();
-        int N = Integer.parseInt(br.readLine());
-        int add = 1;
-        while (N > 0) {
-            int num = Integer.parseInt(br.readLine());
-            while (true) {
-                if (stack.contains(num)) {
-                    if (stack.pop().intValue() == num) {
-                        sb.append("-").append("\n");
-                        break;
-                    } else {
-                        N = 0;
-                        break;
-                    }
-                } else {
-                    stack.add(add);
-                    sb.append("+").append("\n");
-                    add += 1;
-                }
+        int number = 1;
+        while (n-- > 0) {
+            int targetNumber = Integer.parseInt(br.readLine());
+            if (stack.isEmpty()) {
+                add(stack, number++);
             }
-            N--;
+            while (targetNumber > stack.peek()) {
+                add(stack, number++);
+            }
+            if (stack.peek() == targetNumber) {
+                pop(stack);
+                continue;
+            }
+            if (stack.peek() > targetNumber) {
+                answer = new StringBuilder("NO");
+                return;
+            }
         }
-        if (stack.size() == 0) {
-            System.out.println(sb);
-        } else {
-            System.out.println("NO");
-        }
+    }
+
+    private static void add(Stack<Integer> stack, int number) {
+        stack.add(number);
+        answer.append("+").append("\n");
+    }
+
+    private static void pop(Stack<Integer> stack) {
+        stack.pop();
+        answer.append("-").append("\n");
     }
 }
