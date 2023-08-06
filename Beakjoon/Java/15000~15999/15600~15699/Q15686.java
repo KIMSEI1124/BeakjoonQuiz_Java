@@ -18,7 +18,6 @@ public class Q15686 {
     public static void main(String[] args) throws IOException {
         input();
         solve();
-        minStoreDistance(0, new HashSet<>());
         System.out.println(answer);
     }
 
@@ -43,6 +42,7 @@ public class Q15686 {
 
     private static void solve() {
         getDistances();
+        minStoreDistance(0, new HashSet<>());
     }
 
     private static void getDistances() {
@@ -59,12 +59,9 @@ public class Q15686 {
     }
 
     private static void minStoreDistance(int idx, Set<Integer> storeIdx) {
-        if (storeIdx.size() > m) {
-            return;
-        }
-
         if (storeIdx.size() == m) {
             answer = Math.min(answer, getStoreDistance(storeIdx));
+            return;
         }
 
         for (int i = idx; i < stores.size(); i++) {
@@ -84,6 +81,9 @@ public class Q15686 {
                 min = Math.min(min, distance[y][x]);
             }
             storeDistance += min;
+            if (storeDistance > answer) {
+                return Integer.MAX_VALUE;
+            }
         }
         return storeDistance;
     }
