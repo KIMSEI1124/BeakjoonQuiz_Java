@@ -1,45 +1,42 @@
-import java.io.*;
-import java.util.*;
-import java.util.stream.Collectors;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.PriorityQueue;
 
 public class Q1715 {
-    private static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+    private static final BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    private static int n;
+    private static PriorityQueue<Integer> queue;
+    private static int answer;
 
     public static void main(String[] args) throws IOException {
-        int N = Integer.parseInt(br.readLine());
-        List<Long> cards = new ArrayList<>(getList(N));
-        System.out.println(getResult(cards));
+        input();
+        solve();
+        System.out.println(answer);
     }
 
-    private static List<Long> getList(int size) throws IOException {
-        List<Long> list = new ArrayList<>();
-        while (size-- > 0) {
-            list.add(Long.parseLong(br.readLine()));
-        }
-        return list.stream().sorted().collect(Collectors.toList());
+    private static void input() throws IOException {
+        n = Integer.parseInt(br.readLine());
+        queue = initQueue();
     }
 
-    private static long getResult(List<Long> list) {
-        long total = 0L;
-        while (list.size() != 1) {
-            System.out.println(list);
-            long sum = list.get(0) + list.get(1);
-            list.remove(1);
-            list.remove(0);
-            total += sum;
-            for (int i = 0; i < list.size(); i++) {
-                if (list.get(i) >= sum) {
-                    list.add(i, sum);
-                    break;
-                }
-            }
+    private static void solve() throws IOException {
+        while (n-- > 0) {
+            queue.add(Integer.parseInt(br.readLine()));
         }
-        return total;
+
+        while (queue.size() != 1) {
+            int temp = queue.poll() + queue.poll();
+            answer += temp;
+            queue.add(temp);
+        }
     }
+
+    private static PriorityQueue<Integer> initQueue() {
+        return new PriorityQueue<>((o1, o2) -> {
+            return o1 - o2;
+        });
+    }
+
 }
-
-// 10 + 20 = 30 {30, 30, 40, 50}
-// 30 + 30 = 60 {40, 50, 60}
-// 40 + 50 = 90 {60, 90}
-// 60 + 90 = 150 {150}
-// 30 + 60 + 90 + 150 = 330
