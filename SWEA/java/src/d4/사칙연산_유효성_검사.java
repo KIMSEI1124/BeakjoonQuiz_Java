@@ -12,7 +12,6 @@ public class 사칙연산_유효성_검사 {
 
     private static int n;
     private static String[] tree;
-    private static boolean[] visited;
 
     public static void main(String[] args) throws IOException {
         for (int testCase = 1; testCase <= 10; testCase++) {
@@ -26,7 +25,6 @@ public class 사칙연산_유효성_검사 {
     private static void input() throws IOException {
         n = Integer.parseInt(br.readLine());
         tree = new String[n + 1];
-        visited = new boolean[n + 1];
 
         for (int i = 1; i <= n; i++) {
             st = new StringTokenizer(br.readLine());
