@@ -64,7 +64,7 @@ public class Q5430 {
     }
 
     private static Deque<Integer> D(Deque<Integer> x, char pointer) {
-        if(x.isEmpty()) {
+        if (x.isEmpty()) {
             throw new NullPointerException();
         }
         if (pointer == FRONT) {
