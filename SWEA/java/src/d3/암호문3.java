@@ -42,18 +42,7 @@ public class 암호문3 {
         m = Integer.parseInt(br.readLine());
         st = new StringTokenizer(br.readLine());
         for (int i = 0; i < m; i++) {
-            String code = st.nextToken();
-            if (code.equals("I")) {
-                insert();
-                continue;
-            }
-            if (code.equals("D")) {
-                delete();
-                continue;
-            }
-            if (code.equals("A")) {
-                add();
-            }
+            runCode(st.nextToken());
         }
 
         StringBuilder sb = new StringBuilder();
@@ -61,6 +50,20 @@ public class 암호문3 {
             sb.append(passwords.get(i)).append(" ");
         }
         return sb.toString();
+    }
+
+    private static void runCode(String code) {
+        if (code.equals("I")) {
+            insert();
+            return;
+        }
+        if (code.equals("D")) {
+            delete();
+            return;
+        }
+        if (code.equals("A")) {
+            add();
+        }
     }
 
     /* I(삽입) x, y, s : 앞에서부터 x번째 암호문 바로 다음에 y개의 암호문을 삽입한다. s는 덧붙일 암호문들이다.[ ex) I 3 2 123152 487651 ] */
