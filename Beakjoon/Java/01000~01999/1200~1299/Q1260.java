@@ -12,7 +12,7 @@ public class Q1260 {
         // input
         st = new StringTokenizer(br.readLine());
         int N = Integer.parseInt(st.nextToken());
-        if (N == 0) {   // 수정
+        if (N == 0) { // 수정
 
         }
         int M = Integer.parseInt(st.nextToken());
