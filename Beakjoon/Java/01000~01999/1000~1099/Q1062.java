@@ -34,6 +34,9 @@ public class Q1062 {
         /* 남극단어의 시작과 끝어 있는 단어를 읽기 위해서는 최소 5글자를 알아야 하는데 알지 못하면 하나의 단어도 말을 할 수 없다. */
         if (k < 5) {
             return;
+        } else if (k == 26) {
+            answer = n;
+            return;
         }
 
         combination(0, 0, defaultAlphabet());
