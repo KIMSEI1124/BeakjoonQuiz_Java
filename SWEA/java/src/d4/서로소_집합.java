@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class Solution {
+public class 서로소_집합 {
 
     private static final BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     private static final StringBuilder answer = new StringBuilder();
@@ -15,7 +15,7 @@ public class Solution {
     private static int t;   // 테스트 케이스의 개수
     private static int n;   // 초기 집합의 개수
     private static int m;   // 연산의 개수
-    private static Node[] nodes;  // 서로소
+    private static int[] parents;
 
     public static void main(String[] args) throws IOException {
         t = Integer.parseInt(br.readLine());
@@ -32,10 +32,14 @@ public class Solution {
         n = Integer.parseInt(st.nextToken());
         m = Integer.parseInt(st.nextToken());
 
-        nodes = new Node[n + 1];
+        /* `n`개 만큼의 집합 만들기 */
+        make();
+    }
 
+    private static void make() {
+        parents = new int[n + 1];
         for (int i = 1; i <= n; i++) {
-            nodes[i] = Node.from(i);
+            parents[i] = i;
         }
     }
 
@@ -50,9 +54,20 @@ public class Solution {
                 union(a, b);
                 continue;
             }
-            result.append(isSameRepresentative(a, b) ? "1" : "0");
+            result.append(isSameParent(a, b) ? "1" : "0");
         }
         return result.toString();
+    }
+
+    private static int find(int id) {
+        if (id == parents[id]) {
+            return id;
+        }
+        return parents[id] = find(parents[id]);
+    }
+
+    private static boolean isSameParent(int a, int b) {
+        return find(a) == find(b);
     }
 
     private static boolean union(int a, int b) {
@@ -63,53 +78,7 @@ public class Solution {
             return false;
         }
 
-        nodes[bRoot].setRepresentative(nodes[aRoot]);
+        parents[bRoot] = aRoot;
         return true;
-    }
-
-    private static int find(int id) {
-        if (nodes[id].getRepresentativeId() == nodes[id].getId()) {
-            return id;
-        }
-        nodes[id].setRepresentative(nodes[find(nodes[id].getRepresentativeId())]);
-        return nodes[id].getId();
-    }
-
-    private static boolean isSameRepresentative(int a, int b) {
-        return find(a) == find(b);
-    }
-
-    private static class Node {
-        private final int id;
-        private Node representative;
-
-        private Node(int id) {
-            this.id = id;
-            this.representative = this;
-        }
-
-        public static Node from(int id) {
-            return new Node(id);
-        }
-
-        public int getId() {
-            return id;
-        }
-
-        public int getRepresentativeId() {
-            return representative.getId();
-        }
-
-        public void setRepresentative(Node representative) {
-            this.representative = representative;
-        }
-
-        @Override
-        public String toString() {
-            return "Node{" +
-                    "id=" + id +
-                    ", representative=" + representative.getId() +
-                    '}';
-        }
     }
 }
