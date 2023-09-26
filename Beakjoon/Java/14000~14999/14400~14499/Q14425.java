@@ -21,7 +21,7 @@ public class Q14425 {
                 count++;
             }
         }
-        
+
         System.out.println(count);
     }
 }
