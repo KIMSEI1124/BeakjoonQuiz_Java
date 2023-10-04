@@ -7,7 +7,7 @@ import java.util.ArrayDeque;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class Main_1600 {
+public class Main_1600_말이되고싶은_원숭이 {
 
     private static final BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     private static final int[] dy = {-1, 0, 0, 1};
