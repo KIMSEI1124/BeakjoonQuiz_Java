@@ -1,92 +1,103 @@
-import java.io.*;
 import java.util.*;
+import java.io.*;
 
 public class Q18405 {
-    static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-    static StringTokenizer st;
-    static int N, K, S, X, Y;
-    static int[][] tube;
-    static boolean[][] visited;
-    static List<Integer> virus_list = new ArrayList<>();
+    private static final BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+    private static int answer;
+
+    private static int N, K; // N : 배열의 크기, K : 바이러스의 종류의 갯수
+    private static int S, X, Y; // S : S초 뒤, X : X좌표, Y : Y좌표
+    private static int[][] area;
 
     public static void main(String[] args) throws IOException {
-        // input
-        st = new StringTokenizer(br.readLine());
-        N = Integer.parseInt(st.nextToken()); // 시험관의 정보 N * N
-        K = Integer.parseInt(st.nextToken()); // 최대 바이러스의 id
-        tube = new int[N][N];
-
-        for (int i = 0; i < N; i++) {
-            st = new StringTokenizer(br.readLine());
-            for (int j = 0; j < N; j++) {
-                tube[i][j] = Integer.parseInt(st.nextToken());
-                if (!virus_list.contains(tube[i][j])) {
-                    virus_list.add(tube[i][j]);
-                }
-            }
-        }
-
-        Collections.sort(virus_list);
-
-        st = new StringTokenizer(br.readLine());
-        S = Integer.parseInt(st.nextToken()); // S초 후
-        X = Integer.parseInt(st.nextToken()); // X 좌표
-        Y = Integer.parseInt(st.nextToken()); // Y 좌표
-
-        // solve
-        while (S > 0) {
-            visited = new boolean[N][N]; // 초기화
-            int virus_id;
-            for (int i = 0; i < virus_list.size(); i++) {
-                for (int j = 0; j < N; j++) {
-                    for (int k = 0; k < N; k++) {
-                        virus_id = tube[j][k];
-                        if (virus_list.get(i) == virus_id) {
-                            dfs(j, k, virus_list.get(i));
-                        }
-                    }
-                }
-            }
-            S--;
-        }
-
-        // output
-        System.out.println(tube[X - 1][Y - 1]);
+        input();
+        solve();
+        System.out.println(answer);
     }
 
-    static int[] dy = { -1, 0, 0, 1 };
-    static int[] dx = { 0, -1, 1, 0 };
+    private static void input() throws IOException {
+        StringTokenizer st;
+        st = new StringTokenizer(br.readLine());
+        N = Integer.parseInt(st.nextToken());
+        K = Integer.parseInt(st.nextToken());
 
-    /**
-     * DFS
-     * 
-     * @param y  y좌표
-     * @param x  x좌표
-     * @param id 바이러스 id
-     */
-    public static void dfs(int y, int x, int id) {
-        if (visited[y][x]) {
-            return;
+        area = new int[N + 1][N + 1];
+        for (int r = 1; r <= N; r++) {
+            st = new StringTokenizer(br.readLine());
+            for (int c = 1; c <= N; c++) {
+                area[r][c] = Integer.parseInt(st.nextToken());
+            }
         }
-        visited[y][x] = true;
-        int new_y;
-        int new_x;
-        for (int i = 0; i < 4; i++) { // 4방향 탐색
-            new_y = y + dy[i];
-            if (new_y < 0 || new_y >= N) {
+
+        st = new StringTokenizer(br.readLine());
+        S = Integer.parseInt(st.nextToken());
+        X = Integer.parseInt(st.nextToken());
+        Y = Integer.parseInt(st.nextToken());
+    }
+
+    private static int[] dy = { -1, 0, 0, 1 };
+    private static int[] dx = { 0, -1, 1, 0 };
+
+    private static void solve() {
+        /* `id` 순서대로 넣기 -> `list`에 저장후 정렬 한 뒤 queue에 저장 */
+        List<Virus> sortVirus = new ArrayList<>();
+        for (int r = 1; r <= N; r++) {
+            for (int c = 1; c <= N; c++) {
+                if (area[r][c] == 0) {
+                    continue;
+                }
+                sortVirus.add(new Virus(area[r][c], r, c));
+            }
+        }
+        Collections.sort(sortVirus);
+        sortVirus.add(new Virus(-1, -1, -1)); // 더미 (1초 단위)
+
+        /* BFS 탐색하면서 S초 만큼 돌리기 */
+        Queue<Virus> queue = new ArrayDeque<>();
+        for (int i = 0; i < sortVirus.size(); i++) {
+            queue.offer(sortVirus.get(i));
+        }
+
+        int time = 0;
+        while (time < S && queue.size() > 1) { // 시간이 `S`보다 작거나 큐가 비었을 경우 종료
+            Virus virus = queue.poll();
+            if (virus.id == -1) {
+                time++;
+                queue.offer(virus);
                 continue;
             }
-            new_x = x + dx[i];
-            if (new_x < 0 || new_x >= N) {
-                continue;
+
+            for (int i = 0; i < 4; i++) {
+                int newY = virus.y + dy[i];
+                int newX = virus.x + dx[i];
+
+                if (newY < 1 || newY > N || newX < 1 || newX > N || area[newY][newX] != 0) {
+                    continue;
+                }
+
+                area[newY][newX] = virus.id;
+                queue.offer(new Virus(virus.id, newY, newX));
             }
-            if (tube[new_y][new_x] == id) { // 1. 동일한 바이러스 이면
-                dfs(new_y, new_x, id);
-            } else if (tube[new_y][new_x] == 0) { // 2. 바이러스가 없을 경우
-                // 감염후 방문 확인
-                tube[new_y][new_x] = id;
-                visited[new_y][new_x] = true;
-            }
+        }
+
+        answer = area[X][Y];
+    }
+
+    private static class Virus implements Comparable<Virus> {
+        int id;
+        int y;
+        int x;
+
+        public Virus(int id, int r, int c) {
+            this.id = id;
+            y = r;
+            x = c;
+        }
+
+        @Override
+        public int compareTo(Virus other) {
+            return Integer.compare(id, other.id);
         }
     }
 }
