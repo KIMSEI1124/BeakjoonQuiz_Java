@@ -1,51 +1,37 @@
+import java.io.*;
 import java.util.*;
 
 public class Q2577 {
-    static Scanner sc = new Scanner(System.in);
+    private static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    private static StringBuilder answer = new StringBuilder();
+    private static StringTokenizer st;
 
-    public static void main(String[] args) {
-        int[] arr = new int[3];
-        input(arr);
-        solve(arr);
+    private static int a, b, c;
+
+    public static void main(String[] args) throws IOException {
+        input();
+        solve();
+        System.out.println(answer);
     }
 
-    public static int[] input(int[] arr) {
-        for (int i = 0; i < 3; i++) {
-            arr[i] = sc.nextInt();
-        }
-        return arr;
+    private static void input() throws IOException {
+        a = Integer.parseInt(br.readLine());
+        b = Integer.parseInt(br.readLine());
+        c = Integer.parseInt(br.readLine());
     }
 
-    public static void solve(int[] arr) {
-        StringBuilder sb = new StringBuilder();
-        String result = String.valueOf(arr[0] * arr[1] * arr[2]);
-        int[] strArr = new int[10];
-        for (int i = 0; i < result.length(); i++) {
-            if (result.substring(i, i + 1).equals("0")) {
-                strArr[0] += 1;
-            } else if (result.substring(i, i + 1).equals("1")) {
-                strArr[1] += 1;
-            } else if (result.substring(i, i + 1).equals("2")) {
-                strArr[2] += 1;
-            } else if (result.substring(i, i + 1).equals("3")) {
-                strArr[3] += 1;
-            } else if (result.substring(i, i + 1).equals("4")) {
-                strArr[4] += 1;
-            } else if (result.substring(i, i + 1).equals("5")) {
-                strArr[5] += 1;
-            } else if (result.substring(i, i + 1).equals("6")) {
-                strArr[6] += 1;
-            } else if (result.substring(i, i + 1).equals("7")) {
-                strArr[7] += 1;
-            } else if (result.substring(i, i + 1).equals("8")) {
-                strArr[8] += 1;
-            } else if (result.substring(i, i + 1).equals("9")) {
-                strArr[9] += 1;
-            }
+    private static void solve() {
+        int[] count = new int[10];
+        long number = a * b * c;
+        String strNumber = String.valueOf(number);
+        for (int i = 0; i < strNumber.length(); i++) {
+            char c = strNumber.charAt(i);
+            int key = Integer.parseInt(String.valueOf(c));
+            count[key]++;
         }
-        for (int i = 0; i < strArr.length; i++) {
-            sb.append(strArr[i] + "\n");
+
+        for (int i = 0; i < count.length; i++) {
+            answer.append(count[i]).append("\n");
         }
-        System.out.println(sb);
     }
 }
