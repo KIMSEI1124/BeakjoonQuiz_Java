@@ -17,16 +17,16 @@ public class Q18406 {
     }
 
     private static void solve() {
-        int head = 0;
+        int sum = 0;
         for (char c : N.substring(0, N.length() / 2).toCharArray()) {
-            head += Character.getNumericValue(c);
+            sum += Character.getNumericValue(c);
         }
 
         for (char c : N.substring(N.length() / 2).toCharArray()) {
-            head -= Character.getNumericValue(c);
+            sum -= Character.getNumericValue(c);
         }
 
-        if (head == 0) {
+        if (sum == 0) {
             answer.append("LUCKY");
             return;
         }
