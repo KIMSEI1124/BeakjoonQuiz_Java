@@ -1,4 +1,4 @@
-package q1000_1999.q1500_q1599
+package q1000_1999.q1500_1599
 
 import java.io.BufferedReader
 import java.io.InputStreamReader
